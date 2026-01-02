@@ -1,0 +1,68 @@
+name: Deploy Hexo to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # 或你使用的默认分支名称
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout blog source
+        uses: actions/checkout@v2
+        with:
+          path: blog
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "20" # 设置 Node.js 版本
+
+name: Deploy Hexo to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # 或你使用的默认分支名称
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+  - name: Checkout blog source
+    uses: actions/checkout@v4
+    with:
+      path: blog
+
+  - name: Setup Node.js and cache npm
+    uses: actions/setup-node@v4
+    with:
+      node-version: '20'
+      cache: 'npm'
+      cache-dependency-path: blog/package-lock.json
+
+  - name: Install dependencies
+    run: npm ci
+    working-directory: ./blog
+
+  - name: Install Hexo CLI
+    run: npm install -g hexo-cli
+    working-directory: ./blog
+
+  - name: Generate static pages
+    run: npx hexo generate
+    working-directory: ./blog
+
+  - name: Deploy to GitHub Pages
+    uses: peaceiris/actions-gh-pages@v3
+    with:
+      publish_dir: ./blog/public
+      publish_branch: main  # ← 将此改为用于 Pages 的分支（例如 main 或 gh-pages）
+      github_token: ${{ secrets.GITHUB_TOKEN }}
+      # 如果要发布到另一个仓库，注释掉 github_token 并改用下面两行（并确保 secrets.PERSONAL_TOKEN 已设置为具有 repo 权限的 PAT）
+      # personal_token: ${{ secrets.PERSONAL_TOKEN }}
+      # external_repository: gl33332/gl33332.github.io # 更改为你的 GitHub Pages 仓库, username 是你的用户名
+          publish_branch: main # GitHub Pages 分支
