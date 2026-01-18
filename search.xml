@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI免费部署文生图</title>
-    <url>/2025/08/19/AI%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E6%96%87%E7%94%9F%E5%9B%BE/</url>
-    <content><![CDATA[
-文生图AI部署
-1.域名:如(ai.138gl.com)，需要自己购买或注册免费域名。
-2.登录Cloudflare
-3.Wercker部署 复制Wercker代码➡️
-4.登录Wercker，创建新的Hello World项目，将复制的代码粘贴到项目中。
-5.拉到代码第75行，const PASSWORDS = [‘admin123’]，将admin123替换为自己的密码。
-6.左侧工具栏右键新建文件名称 index.html 复制index.html代码➡️将以下代码复制到新建文件中。
-7.点击部署，等待部署完成。
-8.返回Workers 和 Pages 页面点击 绑定 。
-9.打开绑定页面后点击添加绑定选择 Workers AI 绑定。
-10.绑定完成后点击返回 Workers 和 Pages 页面。
-11.如果有域名的话在此处选择 域或路由 点击右侧添加例如: ai.138gl.com 点击添加。
-12.等待域名解析完后就可以打开浏览器输入 ai.138gl.com 就可以使用了。
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo 基础命令</title>
     <url>/2026/01/18/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[欢迎来到 Hexo！这是您的第一篇博文。请查阅 文档 以获取更多信息。如果您在使用 Hexo 时遇到任何问题，可以在 故障排除指南 中找到答案，或者您也可以在 GitHub 上向我提问。
@@ -55,6 +30,39 @@ More info: 部署
         <tag>说明</tag>
         <tag>教学</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>AI免费部署文生图</title>
+    <url>/2025/08/19/AI%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E6%96%87%E7%94%9F%E5%9B%BE/</url>
+    <content><![CDATA[
+文生图AI部署
+1.域名:如(ai.138gl.com)，需要自己购买或注册免费域名。
+2.登录Cloudflare
+3.Wercker部署 复制Wercker代码➡️
+4.登录Wercker，创建新的Hello World项目，将复制的代码粘贴到项目中。
+5.拉到代码第75行，const PASSWORDS = [‘admin123’]，将admin123替换为自己的密码。
+6.左侧工具栏右键新建文件名称 index.html 复制index.html代码➡️将以下代码复制到新建文件中。
+7.点击部署，等待部署完成。
+8.返回Workers 和 Pages 页面点击 绑定 。
+9.打开绑定页面后点击添加绑定选择 Workers AI 绑定。
+10.绑定完成后点击返回 Workers 和 Pages 页面。
+11.如果有域名的话在此处选择 域或路由 点击右侧添加例如: ai.138gl.com 点击添加。
+12.等待域名解析完后就可以打开浏览器输入 ai.138gl.com 就可以使用了。
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Qexo测试文章</title>
+    <url>/2026/01/18/Qexo%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[测试
+测试图片链接
+什么内容都没有~！！
+]]></content>
   </entry>
   <entry>
     <title>影视TV</title>
@@ -95,13 +103,5 @@ More info: 部署
         <tag>私信</tag>
         <tag>教程</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Qexo测试文章</title>
-    <url>/2026/01/18/Qexo%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[测试
-测试图片链接
-什么内容都没有~！！
-]]></content>
   </entry>
 </search>
