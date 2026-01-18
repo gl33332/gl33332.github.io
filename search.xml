@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo 基础命令</title>
-    <url>/2026/01/18/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[欢迎来到 Hexo！这是您的第一篇博文。请查阅 文档 以获取更多信息。如果您在使用 Hexo 时遇到任何问题，可以在 故障排除指南 中找到答案，或者您也可以在 GitHub 上向我提问。
-常用命令
-本地预览
-hexo cl; hexo s
-推送 更新 部署
-hexo cl; hexo g; hexo d
-快速入门
-创建新贴
-$ hexo new &quot;My New Post&quot;
-更多信息: 写作
-启动服务器
-$ hexo server
-更多信息: 服务器
-生成静态文件
-$ hexo generate
-更多信息: 生成
-部署到远程站点
-$ hexo deploy
-More info: 部署
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>说明</tag>
-        <tag>教学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI免费部署文生图</title>
     <url>/2025/08/19/AI%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E6%96%87%E7%94%9F%E5%9B%BE/</url>
     <content><![CDATA[
@@ -79,6 +48,37 @@ More info: 部署
       </categories>
       <tags>
         <tag>影视</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 基础命令</title>
+    <url>/2026/01/18/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[欢迎来到 Hexo！这是您的第一篇博文。请查阅 文档 以获取更多信息。如果您在使用 Hexo 时遇到任何问题，可以在 故障排除指南 中找到答案，或者您也可以在 GitHub 上向我提问。
+常用命令
+本地预览
+hexo cl; hexo s
+推送 更新 部署
+hexo cl; hexo g; hexo d
+快速入门
+创建新贴
+$ hexo new &quot;My New Post&quot;
+更多信息: 写作
+启动服务器
+$ hexo server
+更多信息: 服务器
+生成静态文件
+$ hexo generate
+更多信息: 生成
+部署到远程站点
+$ hexo deploy
+More info: 部署
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>说明</tag>
+        <tag>教学</tag>
       </tags>
   </entry>
   <entry>
