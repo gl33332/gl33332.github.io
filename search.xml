@@ -21,7 +21,7 @@
   </entry>
   <entry>
     <title>Hexo 基础命令</title>
-    <url>/2026/01/19/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+    <url>/2026/01/18/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[欢迎来到 Hexo！这是您的第一篇博文。请查阅 文档 以获取更多信息。如果您在使用 Hexo 时遇到任何问题，可以在 故障排除指南 中找到答案，或者您也可以在 GitHub 上向我提问。
 常用命令
 本地预览
@@ -51,28 +51,10 @@ More info: 部署
       </tags>
   </entry>
   <entry>
-    <title>影视TV</title>
-    <url>/2025/05/29/%E5%BD%B1%E8%A7%86tv/</url>
-    <content><![CDATA[
-欢迎各位光顾我的影视TV
-1.声明：LibreTV来自GitHup上的LibreSpark大佬，是开源项目，供大家学习。这是仓库地址：https://github.com/LibreSpark/LibreTV。
-2.点我➡ 影视TV➡️输入密码进入观看，需要密码的请留言。
-3.打开TV后右上角可自行设置，可自定义API影视，有需要特殊电影的可留言给我。
-4.注：仅供参考学习，请勿滥用~！ 
-祝：六 一 快 乐~！
-]]></content>
-      <categories>
-        <category>影视</category>
-      </categories>
-      <tags>
-        <tag>影视</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Qexo测试文章</title>
     <url>/2026/01/18/Qexo%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[测试
-测试图片链接
+
 什么内容都没有~！！
 ]]></content>
   </entry>
@@ -97,6 +79,24 @@ More info: 部署
         <tag>教学</tag>
         <tag>私信</tag>
         <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>影视TV</title>
+    <url>/2025/05/29/%E5%BD%B1%E8%A7%86tv/</url>
+    <content><![CDATA[
+欢迎各位光顾我的影视TV
+1.声明：LibreTV来自GitHup上的LibreSpark大佬，是开源项目，供大家学习。这是仓库地址：https://github.com/LibreSpark/LibreTV。
+2.点我➡ 影视TV➡️输入密码进入观看，需要密码的请留言。
+3.打开TV后右上角可自行设置，可自定义API影视，有需要特殊电影的可留言给我。
+4.注：仅供参考学习，请勿滥用~！ 
+祝：六 一 快 乐~！
+]]></content>
+      <categories>
+        <category>影视</category>
+      </categories>
+      <tags>
+        <tag>影视</tag>
       </tags>
   </entry>
 </search>
