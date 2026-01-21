@@ -1,0 +1,43 @@
+- name: calendar
+  id: card-widget-calendar
+  class: calendar-widget
+  icon: fas fa-calendar-alt
+  content_html: |
+    <div id="calendar-area-left">
+      <div id="calendar-week"></div>
+      <div id="calendar-date" style="font-size: 48px;"></div>
+      <div id="calendar-solar"></div>
+      <div id="calendar-lunar"></div>
+    </div>
+    <div id="calendar-area-right">
+      <div id="calendar-main"></div>
+    </div>
+
+- name: schedule
+  id: card-widget-schedule
+  class: schedule-widget
+  icon: fas fa-calendar-check
+  content_html: |
+    <div id="schedule-area-left">
+      <div id="schedule-title">距离除夕</div>
+      <div id="schedule-days"></div>
+      <div id="schedule-date">2026-02-17</div>
+    </div>
+    <div id="schedule-area-right">
+      <div class="schedule-r0">
+        <div class="schedule-d0">本年</div>
+        <div class="schedule-d1">
+          <span id="p_span_year" class="aside-span1"></span>
+          <span class="aside-span2">还剩<a></a>天</span>
+          <progress max="365" id="pBar_year"></progress>
+        </div>
+      </div>
+      <div class="schedule-r1">
+        <div class="schedule-d0">本月</div>
+        <div class="schedule-d1">
+          <span id="p_span_month" class="aside-span1"></span>
+          <span class="aside-span2">还剩<a></a>天</span>
+          <progress max="31" id="pBar_month"></progress>
+        </div>
+      </div>
+    </div>
