@@ -25,9 +25,10 @@ jobs:
       - name: 生成静态文件
         run: hexo generate
 
-      - name: 部署到 gh-pages 分支
+      - name: 部署到 main 分支
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages
+          external_repository: gl33332/gl33332.github.io
+          publish_branch: main
