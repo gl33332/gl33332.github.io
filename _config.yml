@@ -103,7 +103,7 @@ theme: solitude
 deploy:
   type: git
   repo: git@github.com:gl33332/gl33332.github.io.git
-  branch: main''
+  branch: main
 
 # Search
 search:
