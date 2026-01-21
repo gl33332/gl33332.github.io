@@ -1,154 +1,88 @@
-document.addEventListener("DOMContentLoaded", () => {
-    initializeCard();
-});
-
-document.addEventListener("pjax:complete", () => {
-    initializeCard();
-});
-
 function initializeCard() {
-    cardTimes();
-    cardRefreshTimes();
+  cardTimes();
+  cardRefreshTimes();
 }
 
-let year,
-    month,
-    week,
-    date,
-    dates,
-    weekStr,
-    monthStr,
-    asideTime,
-    asideDay,
-    asideDayNum,
-    animalYear,
-    ganzhiYear,
-    lunarMon,
-    lunarDay;
+let year, month, week, date, dates, weekStr, monthStr, asideTime, asideDay;
 const now = new Date();
 
 function cardRefreshTimes() {
-    const e = document.getElementById("card-widget-schedule");
-    if (e) {
-        asideDay = (now - asideTime) / 1e3 / 60 / 60 / 24;
-        e.querySelector("#pBar_year").value = asideDay;
-        e.querySelector("#p_span_year").innerHTML =
-            ((asideDay / 365) * 100).toFixed(1) + "%";
-        e.querySelector(
-            ".schedule-r0 .schedule-d1 .aside-span2"
-        ).innerHTML = `还剩<a> ${(365 - asideDay).toFixed(0)} </a>天`;
-        e.querySelector("#pBar_month").value = date;
-        e.querySelector("#pBar_month").max = dates;
-        e.querySelector("#p_span_month").innerHTML =
-            ((date / dates) * 100).toFixed(1) + "%";
-        e.querySelector(
-            ".schedule-r1 .schedule-d1 .aside-span2"
-        ).innerHTML = `还剩<a> ${dates - date} </a>天`;
-        e.querySelector("#pBar_week").value = week === 0 ? 7 : week;
-        e.querySelector("#p_span_week").innerHTML =
-            (((week === 0 ? 7 : week) / 7) * 100).toFixed(1) + "%";
-        e.querySelector(
-            ".schedule-r2 .schedule-d1 .aside-span2"
-        ).innerHTML = `还剩<a> ${7 - (week === 0 ? 7 : week)} </a>天`;
-    }
+  const e = document.getElementById("card-widget-schedule");
+  if (e) {
+    asideTime = new Date("2026/01/01 00:00:00");
+    asideDay = (now - asideTime) / 86400000;
+    e.querySelector("#pBar_year").value = asideDay;
+    e.querySelector("#p_span_year").innerHTML = ((asideDay / 365) * 100).toFixed(1) + "%";
+    // 这里的查询路径必须精确匹配 aside.yml 里的层级
+    e.querySelector(".schedule-r0 .aside-span2 a").innerHTML = Math.max(0, (365 - asideDay).toFixed(0));
+    
+    const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+    e.querySelector("#pBar_month").value = now.getDate();
+    e.querySelector("#pBar_month").max = daysInMonth;
+    e.querySelector("#p_span_month").innerHTML = ((now.getDate() / daysInMonth) * 100).toFixed(1) + "%";
+    e.querySelector(".schedule-r1 .aside-span2 a").innerHTML = Math.max(0, daysInMonth - now.getDate());
+  }
 }
 
 function cardTimes() {
-    year = now.getFullYear();
-    month = now.getMonth();
-    week = now.getDay();
-    date = now.getDate();
+  year = now.getFullYear();
+  month = now.getMonth();
+  week = now.getDay();
+  date = now.getDate();
 
-    const e = document.getElementById("card-widget-calendar");
-    if (e) {
-        const isLeapYear =
-            (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-        weekStr = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"][week];
-        const monthData = [
-            { month: "1月", days: 31 },
-            { month: "2月", days: isLeapYear ? 29 : 28 },
-            { month: "3月", days: 31 },
-            { month: "4月", days: 30 },
-            { month: "5月", days: 31 },
-            { month: "6月", days: 30 },
-            { month: "7月", days: 31 },
-            { month: "8月", days: 31 },
-            { month: "9月", days: 30 },
-            { month: "10月", days: 31 },
-            { month: "11月", days: 30 },
-            { month: "12月", days: 31 },
-        ];
-        monthStr = monthData[month].month;
-        dates = monthData[month].days;
+  const e = document.getElementById("card-widget-calendar");
+  if (e) {
+    weekStr = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"][week];
+    const isLeap = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+    const monthData = [31, isLeap ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    dates = monthData[month];
 
-        const t = (week + 8 - (date % 7)) % 7;
-        let n = "",
-            d = false,
-            s = 7 - t;
-        const o =
-            (dates - s) % 7 === 0
-                ? Math.floor((dates - s) / 7) + 1
-                : Math.floor((dates - s) / 7) + 2;
-        const c = e.querySelector("#calendar-main");
-        const l = e.querySelector("#calendar-date");
+    // 计算日历起始位置
+    const firstDay = new Date(year, month, 1).getDay();
+    const c = e.querySelector("#calendar-main");
+    c.innerHTML = "";
 
-        l.style.fontSize = ["64px", "48px", "36px"][Math.min(o - 3, 2)];
-
-        for (let i = 0; i < o; i++) {
-            if (!c.querySelector(`.calendar-r${i}`)) {
-                c.innerHTML += `<div class='calendar-r${i}'></div>`;
-            }
-            for (let j = 0; j < 7; j++) {
-                if (i === 0 && j === t) {
-                    n = 1;
-                    d = true;
-                }
-                const r = n === date ? " class='now'" : "";
-                if (!c.querySelector(`.calendar-r${i} .calendar-d${j} a`)) {
-                    c.querySelector(
-                        `.calendar-r${i}`
-                    ).innerHTML += `<div class='calendar-d${j}'><a${r}>${n}</a></div>`;
-                }
-                if (n >= dates) {
-                    n = "";
-                    d = false;
-                }
-                if (d) {
-                    n += 1;
-                }
-            }
+    let n = 1;
+    // 关键修复：确保 class 名字与你的 schedule.css 布局匹配
+    for (let i = 0; i < 6; i++) {
+      const row = document.createElement("div");
+      row.className = "calendar-rh"; // 使用 row 布局类名
+      for (let j = 0; j < 7; j++) {
+        const cell = document.createElement("div");
+        cell.className = "calendar-d0"; // 使用 cell 布局类名
+        if ((i === 0 && j >= firstDay) || (i > 0 && n <= dates)) {
+          const isToday = n === date ? " class='now'" : "";
+          cell.innerHTML = `<a${isToday}>${n}</a>`;
+          n++;
         }
-
-        const lunarDate = chineseLunar.solarToLunar(new Date(year, month, date));
-        animalYear = chineseLunar.format(lunarDate, "A");
-        ganzhiYear = chineseLunar.format(lunarDate, "T").slice(0, -1);
-        lunarMon = chineseLunar.format(lunarDate, "M");
-        lunarDay = chineseLunar.format(lunarDate, "d");
-
-        const newYearDate = new Date("2026/02/17 00:00:00");
-        const daysUntilNewYear = Math.floor(
-            (newYearDate - now) / 1e3 / 60 / 60 / 24
-        );
-        asideTime = new Date(`${new Date().getFullYear()}/01/01 00:00:00`);
-        asideDay = (now - asideTime) / 1e3 / 60 / 60 / 24;
-        asideDayNum = Math.floor(asideDay);
-        const weekNum =
-            week - (asideDayNum % 7) >= 0
-                ? Math.ceil(asideDayNum / 7)
-                : Math.ceil(asideDayNum / 7) + 1;
-
-        e.querySelector(
-            "#calendar-week"
-        ).innerHTML = `第${weekNum}周&nbsp;${weekStr}`;
-        e.querySelector("#calendar-date").innerHTML = date
-            .toString()
-            .padStart(2, "0");
-        e.querySelector(
-            "#calendar-solar"
-        ).innerHTML = `${year}年${monthStr}&nbsp;第${asideDay.toFixed(0)}天`;
-        e.querySelector(
-            "#calendar-lunar"
-        ).innerHTML = `${ganzhiYear}${animalYear}年&nbsp;${lunarMon}${lunarDay}`;
-        document.getElementById("schedule-days").innerHTML = daysUntilNewYear;
+        row.appendChild(cell);
+      }
+      c.appendChild(row);
+      if (n > dates) break;
     }
+
+    // 农历逻辑
+    if (typeof chineseLunar !== 'undefined') {
+        const lunarDate = chineseLunar.solarToLunar(now);
+        const animalYear = chineseLunar.format(lunarDate, "A");
+        const ganzhiYear = chineseLunar.format(lunarDate, "T").slice(0, -1);
+        const lunarMon = chineseLunar.format(lunarDate, "M");
+        const lunarDay = chineseLunar.format(lunarDate, "d");
+        const lunarElem = e.querySelector("#calendar-lunar");
+        if(lunarElem) lunarElem.innerHTML = `${ganzhiYear}${animalYear}年&nbsp;${lunarMon}${lunarDay}`;
+    }
+
+    const nyDate = new Date("2026/02/17 00:00:00");
+    const daysToNY = Math.ceil((nyDate - now) / 86400000);
+    const dayOfYear = Math.floor((now - new Date(year, 0, 1)) / 86400000) + 1;
+
+    e.querySelector("#calendar-week").innerHTML = `第${Math.ceil((date + firstDay) / 7)}周&nbsp;${weekStr}`;
+    e.querySelector("#calendar-date").innerHTML = date.toString().padStart(2, "0");
+    e.querySelector("#calendar-solar").innerHTML = `${year}年${month+1}月&nbsp;第${dayOfYear}天`;
+    const sd = document.getElementById("schedule-days");
+    if(sd) sd.innerHTML = daysToNY;
+  }
 }
+
+document.addEventListener("DOMContentLoaded", initializeCard);
+document.addEventListener("pjax:complete", initializeCard);
