@@ -1,24 +1,12 @@
-@echo off
-title Hexo 博客双向同步工具
-color 0b
+:: ...前面的 pull 逻辑保持不变...
 
-echo ======================================================
-echo           1. 正在同步 Qexo 的远程改动 (Master)
-echo ======================================================
-:: 这一步非常重要，因为 Qexo 会直接修改远程文件
-git pull origin master
-
-echo.
-echo ======================================================
-echo           2. 正在备份并触发自动部署 (Master)
-echo ======================================================
 git add .
-:: 检查是否有改动再提交，避免生成空的 commit
-git commit -m "Site Update: %date% %time%"
-git push origin master
+:: 下面这行会自动判断是否有改动，没改动就不 commit
+git diff --quiet --exit-code --cached || git commit -m "Site Update: %date% %time%"
 
+git push origin master
 echo.
 echo ======================================================
-echo   任务完成！源码已推送，GitHub Actions 正在后台部署...
+echo   任务完成！源码已推送，请稍后访问 blog.138gl.com
 echo ======================================================
 pause
