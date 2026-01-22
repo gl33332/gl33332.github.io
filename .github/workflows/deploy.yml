@@ -1,4 +1,4 @@
-name: 自动部署 Hexo
+name: 自动部署 Hexo 并同步分支
 
 on:
   push:
@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: 检出源码
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 安装 Node.js
         uses: actions/setup-node@v4
@@ -25,9 +27,15 @@ jobs:
       - name: 生成静态文件
         run: hexo generate
 
-      - name: 部署到 main 分支
+      - name: 部署到 main 分支 (静态网页)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: main
+
+      - name: 同步 Master 源码到 Main
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git push origin master:main --force
