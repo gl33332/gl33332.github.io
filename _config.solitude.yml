@@ -31,9 +31,9 @@ nav:
   # Left Box
   # 左侧盒子
   group:
-    菜单: # name
-      我的导航: https://dh.138gl.com || https://favicon.vemetric.com/dh.138gl.com?size=64 # name: url || icon
-      我的影视: https://tv.138gl.com || https://favicon.vemetric.com/tv.138gl.com?size=64
+     菜单: # name
+       我的导航: https://dh.138gl.com || https://favicon.vemetric.com/dh.138gl.com?size=64 # name: url || icon
+       我的影视: https://tv.138gl.com || https://favicon.vemetric.com/tv.138gl.com?size=64
   # Menu
   # 菜单
   menu:
