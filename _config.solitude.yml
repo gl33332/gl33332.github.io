@@ -100,10 +100,10 @@ hometop:
      
   recommendList:
     enable: true
-    sup: dh.138gl.com
-    title: 我的导航 dh.138gl.com
-    url: https://dh.138gl.com/
-    img: /img/Left-header-background-6.png
+    sup:  # dh.138gl.com
+    title:  # 我的导航 dh.138gl.com
+    url: https://imgbed.138gl.com/file/blog/大图/274785_20251024184000191200_0.webp #https://dh.138gl.com/
+    img: https://imgbed.138gl.com/file/blog/大图/274785_20251024184000191200_0.webp #/img/Left-header-background-6.png
     color: "none"
 # --------------------------- end ---------------------------
 
