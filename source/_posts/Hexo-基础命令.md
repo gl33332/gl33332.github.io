@@ -1,8 +1,21 @@
 ---
-title: Hexo 基础命令
-top: 1
-toc: true
+title: Hexo 基础命令 #页面/标题
+date: 2025-04-01 #页面/创建日期
+type:  #页面配置里含type值的/设置banner(横幅)时需要配置
+updated:  #页面/更新日期
+desc:  #页面/描述
+aside: #是否开启侧边栏（默认true）
+comment: #显示页面/文章评论模块(默认 true)
 cover: https://lmage.138gl.com/PicGo/2025/04/bw-fm001.jpg
+reprint:  #版权（默认为原创）为true时为转载
+locate:  #文章创作地点
+leftend:  #banner(横幅)底部左侧文字
+rightend:  #banner(横幅)底部右侧文字
+rightbtn:  #banner(横幅)底部右侧按钮文字
+rightbtnlink:  #banner(横幅)底部右侧按钮跳转链接
+typeit: true
+top: 1 
+toc: true
 categories: #分类
   - 教程 
 tags: #标签

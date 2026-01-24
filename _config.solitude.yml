@@ -50,6 +50,7 @@ nav:
        关于: /about/ || fas fa-user
        #装备: /kit/ || fas fa-laptop
        #音乐馆: /music/ || fas fa-music
+       留言板: /message/ || fas fa-comments 
 
   # Right button
   # 右侧按钮
@@ -447,17 +448,17 @@ copy:
 
 # --------------------------- start ---------------------------
 # Mermaid
-mermaid: false
+mermaid: true
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Chart.js
-chart: false
+chart: true
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # typeit
-typeit: false
+typeit: true
 # --------------------------- end ---------------------------
 
 ### Extended configuration
@@ -466,11 +467,11 @@ typeit: false
 # Console
 # 控制台
 console:
-  enable: false
+  enable: true
   # Recent comments
   # 最新评论
   recentComment:
-    enable: false
+    enable: true
     # Cache time 1: 1 day / .5 : half a day
     # 缓存时间 1: 1天 / .5 : 半天
     storage: .2
@@ -876,7 +877,7 @@ music:
 # Danmaku Page
 # 弹幕留言页面
 envelope:
-  enable: false
+  enable: true
   line: 10 # 显示行数
   speed: 20 # 播放速度
   hover: true # 鼠标悬停暂停
@@ -900,7 +901,7 @@ brevity:
 # Recent comments Page
 # 最近评论页面
 recent_comments:
-  enable: false
+  enable: true
   limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
   cache: 0.2 # 1 = 1天 / 1 = 1 day
   page: /recentcomments/ # 最近评论页面 / recent comments page
