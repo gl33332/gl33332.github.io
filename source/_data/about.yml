@@ -126,7 +126,7 @@ likes:
       - name: 吞噬星空 # 动漫或影视名
         href: https://v.qq.com/x/search/?q=吞噬星空&queryFrom=0 # 腾讯视频某个位置
         cover: https://imgbed.138gl.com/file/blog/gl/1748811250506_tsxk01.jpg # 封面图  
-    button: true # false 可以关闭右边按钮
+    button: false # false 可以关闭右边按钮
     button_link: "/pyq/" # 跳转路径
     button_text: "观看记录" # 按钮文字
   - type: like-technology
@@ -139,7 +139,7 @@ likes:
     tips: 音乐偏好
     title: 民谣、古典、轻音乐
     subtips: 跟 同行陌路两不疑 一起欣赏更多音乐
-    button: true
+    button: false
     button_text: 更多推荐
     button_link: /music/
 
