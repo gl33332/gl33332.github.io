@@ -3,6 +3,7 @@ title: AI免费部署文生图
 date: 2025-08-19 12:00:00
 categories: #分类
   - 工具 
+  - 热门
 tags: #标签
   - AI
 comments: true
