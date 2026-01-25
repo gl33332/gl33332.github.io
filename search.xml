@@ -1,52 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo 基础命令</title>
-    <url>/2025/04/01/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/">Hexo</a>！这是您的第一篇博文。请查阅 <a href="https://hexo.io/docs/">文档</a> 以获取更多信息。如果您在使用 Hexo 时遇到任何问题，可以在 <a href="https://hexo.io/docs/troubleshooting.html">故障排除指南</a> 中找到答案，或者您也可以在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a> 上向我提问。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl; hexo s</span><br></pre></td></tr></table></figure>
-
-<h3 id="推送-更新-部署"><a href="#推送-更新-部署" class="headerlink" title="推送 更新 部署"></a>推送 更新 部署</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl; hexo g; hexo d</span><br></pre></td></tr></table></figure>
-
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建新贴"><a href="#创建新贴" class="headerlink" title="创建新贴"></a>创建新贴</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>更多信息: <a href="https://hexo.io/docs/writing.html">写作</a></p>
-<h3 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/server.html">服务器</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/generating.html">生成</a></p>
-<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">部署</a></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>说明</tag>
-        <tag>教学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>影视TV</title>
-    <url>/2025/05/30/%E5%BD%B1%E8%A7%86tv/</url>
-    <content><![CDATA[<img src="https://imgbed.138gl.com/file/dh/dbxc/1748494392477_wdys_2025-05-29_12-49-21.png" alt="我的影视TV">
-
-<h2 id="欢迎各位光顾我的影视TV"><a href="#欢迎各位光顾我的影视TV" class="headerlink" title="欢迎各位光顾我的影视TV"></a>欢迎各位光顾我的影视TV</h2><p>1.声明：LibreTV来自GitHup上的LibreSpark大佬，是开源项目，供大家学习。这是仓库地址：<a href="https://github.com/LibreSpark/LibreTV">https://github.com/LibreSpark/LibreTV</a>。</p>
-<p>2.点我➡<a href="https://tv.138gl.com/"> 影视TV➡️</a>输入密码进入观看，需要密码的请留言。</p>
-<p>3.打开TV后右上角可自行设置，可自定义API影视，有需要特殊电影的可留言给我。</p>
-<p>4.<strong><font color="red">注：仅供参考学习，请勿滥用~！</strong> </font></p>
-<h1><span style="display:block;text-align:center;color:yellow;">祝：六 一 快 乐~！</span>]]></content>
-      <categories>
-        <category>影视</category>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>影视</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI免费部署文生图</title>
     <url>/2025/08/19/AI%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E6%96%87%E7%94%9F%E5%9B%BE/</url>
     <content><![CDATA[<img src="https://imgbed.138gl.com/file/blog/文章/AI/1755614107881_TWAIbt-001.png" alt="AI免费部署文生图">
@@ -73,6 +27,24 @@
       </tags>
   </entry>
   <entry>
+    <title>影视TV</title>
+    <url>/2025/05/30/%E5%BD%B1%E8%A7%86tv/</url>
+    <content><![CDATA[<img src="https://imgbed.138gl.com/file/dh/dbxc/1748494392477_wdys_2025-05-29_12-49-21.png" alt="我的影视TV">
+
+<h2 id="欢迎各位光顾我的影视TV"><a href="#欢迎各位光顾我的影视TV" class="headerlink" title="欢迎各位光顾我的影视TV"></a>欢迎各位光顾我的影视TV</h2><p>1.声明：LibreTV来自GitHup上的LibreSpark大佬，是开源项目，供大家学习。这是仓库地址：<a href="https://github.com/LibreSpark/LibreTV">https://github.com/LibreSpark/LibreTV</a>。</p>
+<p>2.点我➡<a href="https://tv.138gl.com/"> 影视TV➡️</a>输入密码进入观看，需要密码的请留言。</p>
+<p>3.打开TV后右上角可自行设置，可自定义API影视，有需要特殊电影的可留言给我。</p>
+<p>4.<strong><font color="red">注：仅供参考学习，请勿滥用~！</strong> </font></p>
+<h1><span style="display:block;text-align:center;color:yellow;">祝：六 一 快 乐~！</span>]]></content>
+      <categories>
+        <category>影视</category>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>影视</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>私信介绍</title>
     <url>/2025/05/30/%E7%A7%81%E4%BF%A1%E4%BB%8B%E7%BB%8D/</url>
     <content><![CDATA[<p><img src="https://imgbed.138gl.com/file/dh/dbxc/1748587910577_sx_2025-05-30_14-30-4201.png" alt="私信"></p>
@@ -90,9 +62,37 @@
         <category>教程</category>
       </categories>
       <tags>
-        <tag>教学</tag>
         <tag>私信</tag>
+        <tag>教学</tag>
         <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 基础命令</title>
+    <url>/2025/04/01/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/">Hexo</a>！这是您的第一篇博文。请查阅 <a href="https://hexo.io/docs/">文档</a> 以获取更多信息。如果您在使用 Hexo 时遇到任何问题，可以在 <a href="https://hexo.io/docs/troubleshooting.html">故障排除指南</a> 中找到答案，或者您也可以在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a> 上向我提问。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl; hexo s</span><br></pre></td></tr></table></figure>
+
+<h3 id="推送-更新-部署"><a href="#推送-更新-部署" class="headerlink" title="推送 更新 部署"></a>推送 更新 部署</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl; hexo g; hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建新贴"><a href="#创建新贴" class="headerlink" title="创建新贴"></a>创建新贴</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>更多信息: <a href="https://hexo.io/docs/writing.html">写作</a></p>
+<h3 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/server.html">服务器</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/generating.html">生成</a></p>
+<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">部署</a></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>教学</tag>
+        <tag>说明</tag>
       </tags>
   </entry>
 </search>
