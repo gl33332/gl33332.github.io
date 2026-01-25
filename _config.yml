@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://gl33332.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -112,3 +112,19 @@ search:
   content: true
   format: html
 
+# 追番配置
+bangumi:
+  enable: true
+  source: bgm
+  bgm_uid: 1204526
+  vmid: 472696710
+  # 加入以下状态过滤（具体取决于插件版本，常见写法如下）
+  status: 
+    - do    # 在看
+    - collect # 已看
+    - wish    # 想看
+  path: bangumis/index.html
+  title: 我的追番
+  quote: "生活总该有点爱好"
+  show_progress: true      # 显示观看进度
+  lazyload: true

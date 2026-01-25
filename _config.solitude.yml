@@ -48,6 +48,7 @@ nav:
        #宝藏博主: javascript:travelling() || fas fa-gift
      我的:
        关于: /about/ || fas fa-user
+       追番: /bangumis/ || fas fa-tv 
        #装备: /kit/ || fas fa-laptop
        #音乐馆: /music/ || fas fa-music
        留言板: /message/ || fas fa-comments 
@@ -680,15 +681,15 @@ memorial:
 # --------------------------- start ---------------------------
 # OpenGraph
 OpenGraph:
-  enable: false
+  enable: true
   options:
-    # twitter_card:
-    # twitter_image:
-    # twitter_id:
-    # twitter_site:
-    # google_plus:
-    # fb_admins:
-    # fb_app_id:
+     twitter_card:
+     twitter_image:
+     twitter_id:
+     twitter_site:
+     google_plus:
+     fb_admins:
+     fb_app_id:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

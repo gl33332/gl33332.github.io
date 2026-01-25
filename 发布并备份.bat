@@ -1,12 +1,33 @@
-:: ...前面的 pull 逻辑保持不变...
+@echo off
+setlocal enabledelayedexpansion
 
+echo ======================================================
+echo   正在启动：博客一键更新（番剧同步 + 源码备份 + 发布）
+echo ======================================================
+
+:: 1. 同步番剧数据 (如果你在 Bangumi 上有新动作)
+echo [Step 1/4] 正在抓取 Bangumi.tv 番剧数据...
+call hexo bangumi -u
+
+:: 2. 清理并生成
+echo [Step 2/4] 正在清理缓存并重新生成网页...
+call hexo cl && call hexo g
+
+:: 3. 备份源码到 GitHub
+echo [Step 3/4] 正在备份博客源码...
 git add .
-:: 下面这行会自动判断是否有改动，没改动就不 commit
+:: 检查是否有变动，有则提交
 git diff --quiet --exit-code --cached || git commit -m "Site Update: %date% %time%"
+:: 这里的 main 请确认是你仓库的分支名
+git push origin main
 
-git push origin master
+:: 4. 部署网页
+echo [Step 4/4] 正在部署静态页面到线上...
+call hexo d
+
 echo.
 echo ======================================================
-echo   任务完成！源码已推送，请稍后访问 blog.138gl.com
+echo   🎉 所有任务已圆满完成！
+echo   请稍后访问：blog.138gl.com
 echo ======================================================
 pause
