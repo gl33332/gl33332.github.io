@@ -8,7 +8,7 @@ subtitle: ''
 description: ''
 keywords:
 author: 同行陌路两不疑
-language: enzh-CN
+language: zh-CN
 timezone: ''
 
 # URL
@@ -115,15 +115,20 @@ search:
 # 追番插件配置
 bangumi:
   enable: true
-  source: bangumi           # 【关键】明确告诉插件你用的是 Bangumi 而不是 B站
-  vmid: 1204526             # 【关键】即使是 Bangumi ID，也要写在 vmid 字段下
-  user: 1204526             # 保险起见，user 也写上
+  source: bangumi           # 必须！指定来源为 Bangumi.tv
+  vmid: 1204526             # 你的 Bangumi ID
   path: bangumis/index.html
-  v2: false
-  type: anime
-  show: 1              # 显示状态：1在看，2看过，3想看
-  loading: img/loading.gif  # 加载动画路径
+  show: 1                   # 1: 在看 (你目前有5部), 2: 看过, 3: 想看
+  quote: "同行陌路两不疑的二次元足迹"
+  loading: /img/loading.gif
   metaColor: "#1abc9c"
   color: "#3498db"
-  show_progress: true      # 显示观看进度
+  # 如果图片裂了，取消下面两行的注释：
+  proxy:
+    host: 'https://images.weserv.nl'
+  show_progress: true
   lazyload: true
+  meta:                # 关键：确保 meta 下的子项正确缩进
+    wantWatch: 想看
+    watching: 在看
+    watched: 已看
