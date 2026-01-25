@@ -113,19 +113,19 @@ likes:
     list: # 最好就是五个或以上，相信你们肯定没那么少的。
       - name: 凡人修仙传 # 动漫或影视名
         href: https://search.bilibili.com/all?keyword=凡人修仙传 # B站或豆瓣某个位置
-        cover: https://imgbed.138gl.com/file/blog/追番/凡人修仙传.webp # 封面图
+        cover: https://imgbed.138gl.com/file/blog/追番/凡人修仙传(1).webp # 封面图
       - name: 仙逆 # 动漫或影视名
         href: https://v.qq.com/x/search/?q=仙逆&queryFrom=0 # 腾讯视频某个位置
-        cover: https://imgbed.138gl.com/file/blog/追番/仙逆.webp # 封面图
+        cover: https://imgbed.138gl.com/file/blog/追番/仙逆(1).webp # 封面图
       - name: 斗破苍穹 # 动漫或影视名
         href: https://v.qq.com/x/search/?q=斗破苍穹&queryFrom=0 # 腾讯视频某个位置
-        cover: https://imgbed.138gl.com/file/blog/追番/斗破苍穹.webp # 封面图
+        cover: https://imgbed.138gl.com/file/blog/追番/斗破苍穹(1).webp # 封面图
       - name: 牧神记 # 动漫或影视名
         href: https://v.qq.com/x/search/?q=牧神记&queryFrom=0 # B站或豆瓣某个位置
-        cover: https://imgbed.138gl.com/file/blog/追番/牧神记.webp # 封面图
+        cover: https://imgbed.138gl.com/file/blog/追番/牧神记(1).webp # 封面图
       - name: 吞噬星空 # 动漫或影视名
         href: https://v.qq.com/x/search/?q=吞噬星空&queryFrom=0 # 腾讯视频某个位置
-        cover: https://imgbed.138gl.com/file/blog/追番/吞噬星空.webp # 封面图  
+        cover: https://imgbed.138gl.com/file/blog/追番/吞噬星空(1).webp # 封面图  
     button: false # false 可以关闭右边按钮
     button_link: "/pyq/" # 跳转路径
     button_text: "观看记录" # 按钮文字
