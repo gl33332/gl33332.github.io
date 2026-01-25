@@ -120,9 +120,9 @@ bangumi:
   vmid: 472696710
   # 加入以下状态过滤（具体取决于插件版本，常见写法如下）
   status: 
-    - do    # 在看
-    - collect # 已看
-    - wish    # 想看
+    - 再看    # 在看
+    - 已看 # 已看
+    - 想看    # 想看
   path: bangumis/index.html
   title: 我的追番
   quote: "生活总该有点爱好"
