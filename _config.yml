@@ -112,20 +112,18 @@ search:
   content: true
   format: html
 
-# 追番配置
+# 追番插件配置
 bangumi:
   enable: true
-  source: bgm
-  bgm_uid: 1204526
-  vmid: 472696710
-  # 加入以下状态过滤（具体取决于插件版本，常见写法如下）
-  status: 
-    - 再看    # 在看
-    - 已看 # 已看
-    - 想看    # 想看
+  source: bangumi           # 【关键】明确告诉插件你用的是 Bangumi 而不是 B站
+  vmid: 1204526             # 【关键】即使是 Bangumi ID，也要写在 vmid 字段下
+  user: 1204526             # 保险起见，user 也写上
   path: bangumis/index.html
-  title: 我的追番
-  quote: "生活总该有点爱好"
-  coverMirror: 'https://image.baidu.com/search/down?url='  # 示例配置
+  v2: false
+  type: anime
+  show: 1              # 显示状态：1在看，2看过，3想看
+  loading: img/loading.gif  # 加载动画路径
+  metaColor: "#1abc9c"
+  color: "#3498db"
   show_progress: true      # 显示观看进度
   lazyload: true
