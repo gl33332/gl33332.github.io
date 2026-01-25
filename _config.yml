@@ -126,5 +126,6 @@ bangumi:
   path: bangumis/index.html
   title: 我的追番
   quote: "生活总该有点爱好"
+  coverMirror: 'https://image.baidu.com/search/down?url='  # 示例配置
   show_progress: true      # 显示观看进度
   lazyload: true
