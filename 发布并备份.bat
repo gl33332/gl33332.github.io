@@ -19,7 +19,7 @@ git add .
 :: 检查是否有变动，有则提交
 git diff --quiet --exit-code --cached || git commit -m "Site Update: %date% %time%"
 :: 这里的 main 请确认是你仓库的分支名
-git push origin main
+git push origin master
 
 :: 4. 部署网页
 echo [Step 4/4] 正在部署静态页面到线上...
