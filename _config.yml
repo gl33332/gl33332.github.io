@@ -112,23 +112,23 @@ search:
   content: true
   format: html
 
-# 追番插件配置
-bangumi:
+bangumi: # 追番设置
   enable: true
-  source: bangumi           # 必须！指定来源为 Bangumi.tv
-  vmid: 1204526             # 你的 Bangumi ID
+  source: bangumi            # 明确指定来源为 Bangumi
+  bgmInfoSource: 'bgmv0'     # 采用新版 bgmv0 接口，抓取更稳定
   path: bangumis/index.html
-  show: 1                   # 1: 在看 (你目前有5部), 2: 看过, 3: 想看
-  quote: "同行陌路两不疑的二次元足迹"
-  loading: /img/loading.gif
+  vmid: 1204526              # 你的 Bangumi ID
+  title: '追番列表'
+  quote: '同行陌路两不疑的二次元足迹'
+  show: 1                    # 显示“在看”列表（你目前有 5 部）
+  lazyload: true
+  srcValue: '__image__'
+  swup: false
+  showMyComment: true        # 建议开启，可显示你在 Bangumi 写的简评
+  pagination: false
   metaColor: "#1abc9c"
   color: "#3498db"
-  # 如果图片裂了，取消下面两行的注释：
-  proxy:
-    host: 'https://images.weserv.nl'
-  show_progress: true
-  lazyload: true
-  meta:                # 关键：确保 meta 下的子项正确缩进
-    wantWatch: 想看
-    watching: 在看
-    watched: 已看
+  webp: true
+  progress: true
+  # 🚀 重点：直接使用新版提供的镜像服务参数
+coverMirror: 'https://images.weserv.nl/?url='
