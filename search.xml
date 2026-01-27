@@ -27,34 +27,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 基础命令</title>
-    <url>/2025/04/01/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/">Hexo</a>！这是您的第一篇博文。请查阅 <a href="https://hexo.io/docs/">文档</a> 以获取更多信息。如果您在使用 Hexo 时遇到任何问题，可以在 <a href="https://hexo.io/docs/troubleshooting.html">故障排除指南</a> 中找到答案，或者您也可以在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a> 上向我提问。</p>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl; hexo s</span><br></pre></td></tr></table></figure>
-
-<h3 id="推送-更新-部署"><a href="#推送-更新-部署" class="headerlink" title="推送 更新 部署"></a>推送 更新 部署</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl; hexo g; hexo d</span><br></pre></td></tr></table></figure>
-
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建新贴"><a href="#创建新贴" class="headerlink" title="创建新贴"></a>创建新贴</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>更多信息: <a href="https://hexo.io/docs/writing.html">写作</a></p>
-<h3 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/server.html">服务器</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>更多信息: <a href="https://hexo.io/docs/generating.html">生成</a></p>
-<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">部署</a></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>说明</tag>
-        <tag>教学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>影视TV</title>
     <url>/2025/05/30/%E5%BD%B1%E8%A7%86tv/</url>
     <content><![CDATA[<img src="https://imgbed.138gl.com/file/dh/dbxc/1748494392477_wdys_2025-05-29_12-49-21.png" alt="我的影视TV">
@@ -90,9 +62,37 @@
         <category>教程</category>
       </categories>
       <tags>
-        <tag>教学</tag>
         <tag>私信</tag>
+        <tag>教学</tag>
         <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 基础命令</title>
+    <url>/2025/04/01/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/">Hexo</a>！这是您的第一篇博文。请查阅 <a href="https://hexo.io/docs/">文档</a> 以获取更多信息。如果您在使用 Hexo 时遇到任何问题，可以在 <a href="https://hexo.io/docs/troubleshooting.html">故障排除指南</a> 中找到答案，或者您也可以在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a> 上向我提问。</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl; hexo s</span><br></pre></td></tr></table></figure>
+
+<h3 id="推送-更新-部署"><a href="#推送-更新-部署" class="headerlink" title="推送 更新 部署"></a>推送 更新 部署</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo cl; hexo g; hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="创建新贴"><a href="#创建新贴" class="headerlink" title="创建新贴"></a>创建新贴</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>更多信息: <a href="https://hexo.io/docs/writing.html">写作</a></p>
+<h3 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/server.html">服务器</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>更多信息: <a href="https://hexo.io/docs/generating.html">生成</a></p>
+<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">部署</a></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>教学</tag>
+        <tag>说明</tag>
       </tags>
   </entry>
 </search>
