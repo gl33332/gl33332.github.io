@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AI免费部署文生图</title>
-    <url>/2025/08/19/AI%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E6%96%87%E7%94%9F%E5%9B%BE/</url>
-    <content><![CDATA[<img src="https://imgbed.138gl.com/file/blog/文章/AI/1755614107881_TWAIbt-001.png" alt="AI免费部署文生图">
-
-<h2 id="文生图AI部署"><a href="#文生图AI部署" class="headerlink" title="文生图AI部署"></a>文生图AI部署</h2><p>1.域名:如(ai.138gl.com)，需要自己购买或注册免费域名。</p>
-<p>2.登录Cloudflare</p>
-<p>3.Wercker部署 <a href="https://github.com/gl33332/138gl-ai/blob/main/worker.js">复制Wercker代码➡️</a></p>
-<p>4.登录Wercker，创建新的Hello World项目，将复制的代码粘贴到项目中。</p>
-<p>5.拉到代码第75行，const PASSWORDS &#x3D; [‘admin123’]，将admin123替换为自己的密码。</p>
-<p>6.左侧工具栏右键新建文件名称 index.html <a href="https://github.com/gl33332/138gl-ai/blob/main/index.html">复制index.html代码➡️</a>将以下代码复制到新建文件中。</p>
-<p>7.点击部署，等待部署完成。</p>
-<p>8.返回Workers 和 Pages 页面点击 绑定 。</p>
-<p>9.打开绑定页面后点击添加绑定选择 Workers AI 绑定。</p>
-<p>10.绑定完成后点击返回 Workers 和 Pages 页面。</p>
-<p>11.如果有域名的话在此处选择 域或路由 点击右侧添加例如: ai.138gl.com 点击添加。</p>
-<p>12.等待域名解析完后就可以打开浏览器输入 ai.138gl.com 就可以使用了。</p>
-]]></content>
-      <categories>
-        <category>工具</category>
-        <category>热门</category>
-      </categories>
-      <tags>
-        <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo 基础命令</title>
     <url>/2025/04/01/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p>欢迎来到 <a href="https://hexo.io/">Hexo</a>！这是您的第一篇博文。请查阅 <a href="https://hexo.io/docs/">文档</a> 以获取更多信息。如果您在使用 Hexo 时遇到任何问题，可以在 <a href="https://hexo.io/docs/troubleshooting.html">故障排除指南</a> 中找到答案，或者您也可以在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a> 上向我提问。</p>
@@ -52,6 +26,32 @@
       <tags>
         <tag>说明</tag>
         <tag>教学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI免费部署文生图</title>
+    <url>/2025/08/19/AI%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E6%96%87%E7%94%9F%E5%9B%BE/</url>
+    <content><![CDATA[<img src="https://imgbed.138gl.com/file/blog/文章/AI/1755614107881_TWAIbt-001.png" alt="AI免费部署文生图">
+
+<h2 id="文生图AI部署"><a href="#文生图AI部署" class="headerlink" title="文生图AI部署"></a>文生图AI部署</h2><p>1.域名:如(ai.138gl.com)，需要自己购买或注册免费域名。</p>
+<p>2.登录Cloudflare</p>
+<p>3.Wercker部署 <a href="https://github.com/gl33332/138gl-ai/blob/main/worker.js">复制Wercker代码➡️</a></p>
+<p>4.登录Wercker，创建新的Hello World项目，将复制的代码粘贴到项目中。</p>
+<p>5.拉到代码第75行，const PASSWORDS &#x3D; [‘admin123’]，将admin123替换为自己的密码。</p>
+<p>6.左侧工具栏右键新建文件名称 index.html <a href="https://github.com/gl33332/138gl-ai/blob/main/index.html">复制index.html代码➡️</a>将以下代码复制到新建文件中。</p>
+<p>7.点击部署，等待部署完成。</p>
+<p>8.返回Workers 和 Pages 页面点击 绑定 。</p>
+<p>9.打开绑定页面后点击添加绑定选择 Workers AI 绑定。</p>
+<p>10.绑定完成后点击返回 Workers 和 Pages 页面。</p>
+<p>11.如果有域名的话在此处选择 域或路由 点击右侧添加例如: ai.138gl.com 点击添加。</p>
+<p>12.等待域名解析完后就可以打开浏览器输入 ai.138gl.com 就可以使用了。</p>
+]]></content>
+      <categories>
+        <category>工具</category>
+        <category>热门</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
       </tags>
   </entry>
   <entry>
