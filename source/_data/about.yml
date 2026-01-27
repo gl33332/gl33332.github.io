@@ -127,7 +127,7 @@ likes:
         href: https://v.qq.com/x/search/?q=吞噬星空&queryFrom=0 # 腾讯视频某个位置
         cover: https://imgbed.138gl.com/file/blog/追番/吞噬星空(1).webp # 封面图  
     button: true # false 可以关闭右边按钮
-    button_link: "https://new.138gl.com/" # 跳转路径
+    button_link: "/bangumis/" # 跳转路径
     button_text: "观看记录" # 按钮文字
   - type: like-technology
     bg: https://lmage.138gl.com/PicGo/2025/05/764409f0-1a89-475c-ae7b-e39fe081b72e-fb.webp
