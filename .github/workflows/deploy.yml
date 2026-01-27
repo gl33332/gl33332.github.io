@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch: # 允许在 GitHub Actions 页面手动点击按钮触发更新
 
 jobs:
   build-and-deploy:
@@ -24,6 +25,11 @@ jobs:
           npm install
           npm install -g hexo-cli
 
+      - name: 更新番剧数据
+        run: |
+          # 尝试更新番剧，如果插件未配置或失败则跳过，不影响整体部署
+          hexo bangumi -u || echo "Bangumi update skipped or failed"
+
       - name: 生成静态文件
         run: hexo generate
 
@@ -33,3 +39,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: main
+          commit_message: "Site Update: ${{ github.event.head_commit.message }} (Automated)"
