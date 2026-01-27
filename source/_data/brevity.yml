@@ -1,12 +1,11 @@
 - content: 南宁最近真的很冷~！
-  date: 2026-01-22 
-  location: 
+  date: 2026-01-22 00:00
 
 - content: 好大的雪~
-  date: 2025-12-12 
   location: 邯郸
   image:
     - url: https://imgbed.138gl.com/file/blog/即刻/IMG_20251212_191249.webp
+  date: 2025-12-12  
 
 - content: 南宁邕江水位继续上涨中。
   date: 2025-10-02  
