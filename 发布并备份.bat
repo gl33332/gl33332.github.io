@@ -9,25 +9,15 @@ echo ======================================================
 echo [Step 1/4] 正在抓取 Bangumi.tv 番剧数据...
 call hexo bangumi -u
 
-:: 2. 清理并生成
-echo [Step 2/4] 正在清理缓存并重新生成网页...
-call hexo cl && call hexo g
+:: ...前面的 pull 逻辑保持不变...
 
-:: 3. 备份源码到 GitHub
-echo [Step 3/4] 正在备份博客源码...
 git add .
-:: 检查是否有变动，有则提交
+:: 下面这行会自动判断是否有改动，没改动就不 commit
 git diff --quiet --exit-code --cached || git commit -m "Site Update: %date% %time%"
-:: 这里的 main 请确认是你仓库的分支名
+
 git push origin master
-
-:: 4. 部署网页
-echo [Step 4/4] 正在部署静态页面到线上...
-call hexo d
-
 echo.
 echo ======================================================
-echo   🎉 所有任务已圆满完成！
-echo   请稍后访问：blog.138gl.com
+echo   任务完成！源码已推送，请稍后访问 blog.138gl.com
 echo ======================================================
 pause
