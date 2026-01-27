@@ -98,7 +98,7 @@ hometop:
          color: "#df5b40"
   group:
      热门: https://new.138gl.com/ || fas fa-fire-alt || linear-gradient(to right,#8e2de2,#4a00e0)
-     生活: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
+     生活: /essay/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
      
   recommendList:
     enable: true
