@@ -112,23 +112,13 @@ search:
   content: true
   format: html
 
-bangumi: # 追番设置
+bangumi:
   enable: true
-  source: bangumi            # 明确指定来源为 Bangumi
-  bgmInfoSource: 'bgmv0'     # 采用新版 bgmv0 接口，抓取更稳定
-  path: bangumis/index.html
-  vmid: 1204526              # 你的 Bangumi ID
-  title: '追番列表'
-  quote: '同行陌路两不疑的二次元足迹'
-  show: 1                    # 显示“在看”列表（你目前有 5 部）
-  lazyload: true
-  srcValue: '__image__'
-  swup: false
-  showMyComment: true        # 建议开启，可显示你在 Bangumi 写的简评
-  pagination: false
-  metaColor: "#1abc9c"
-  color: "#3498db"
-  webp: true
-  progress: true
-  # 🚀 重点：直接使用新版提供的镜像服务参数
-coverMirror: 'https://images.weserv.nl/?url='
+  source: bgm             # 核心：不再去爬 B 站，避免报错
+  vmid: 1                 # 随便填一个
+  title: '我的追番'
+  quote: '凡人修仙，稳字当头；星空吞噬，强者为尊。'
+  show: 1
+  lazyload: false         # 关键：彻底关闭懒加载，防止图片透明
+  webp: false
+  extraData: true         # 关键：让它只显示 extra_bangumis.json 里的内容    
