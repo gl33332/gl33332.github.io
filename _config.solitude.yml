@@ -27,13 +27,13 @@ site:
 # --------------------------- start ---------------------------
 # Navigation bar
 # 导航栏
-nav:
+#nav:
   # Left Box
   # 左侧盒子
-  group:
-     菜单: # name
-       我的导航: https://dh.138gl.com || https://favicon.vemetric.com/dh.138gl.com?size=64 # name: url || icon
-       我的影视: https://tv.138gl.com || https://favicon.vemetric.com/tv.138gl.com?size=64
+  #group:
+     #菜单: # name
+       #我的导航: https://dh.138gl.com || https://favicon.vemetric.com/dh.138gl.com?size=64 # name: url || icon
+       #我的影视: https://tv.138gl.com || https://favicon.vemetric.com/tv.138gl.com?size=64
   # Menu
   # 菜单
   menu:
@@ -99,6 +99,8 @@ hometop:
   group:
      热门: /news/ || fas fa-fire-alt || linear-gradient(to right,#8e2de2,#4a00e0)
      生活: /essay/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
+     导航: https://dh.138gl.com || fas fa-compass || linear-gradient(to right,#00c6ff,#0072ff)
+     影视: https://tv.138gl.com || fas fa-video || linear-gradient(to right,#11998e,#38ef7d)
      
   recommendList:
     enable: true
@@ -626,10 +628,10 @@ lazyload:
 loading:
   # Full screen loading
   # 全屏加载
-  fullpage: false
+  fullpage: true
   # Loading icon, default is siteicon
   # 加载图标，不写默认siteicon
-  favicon: /img/favicon.png
+  favicon: /img/avatar.png
   # Pace loading
   # Pace 加载
   pace: true
@@ -896,6 +898,12 @@ brevity:
   page: /essay/
   style: 1
   strip: 30
+# 自定义注入
+inject:
+  head:
+    - "<style>.essay_bar_icons i::after { content: '即刻说说'; margin-left: 8px; font-weight: bold; } #essay-mini-text { font-weight: bold; font-size: 14px; margin-right: 10px; white-space: nowrap; display: flex; align-items: center; }</style>"
+  body:
+    - "<script>function injectEssayText(){ const bbtalk = document.getElementById('bbtalk'); if (bbtalk && !document.getElementById('essay-mini-text')) { const span = document.createElement('span'); span.id = 'essay-mini-text'; span.innerText = '即刻说说'; bbtalk.insertBefore(span, bbtalk.firstChild); } } document.addEventListener('DOMContentLoaded', injectEssayText); document.addEventListener('pjax:complete', injectEssayText);</script>"
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
