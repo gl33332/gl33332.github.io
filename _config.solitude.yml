@@ -2,6 +2,7 @@
 # Hexo Theme Solitude
 # Author: 伍十七(@everfu)
 # Github: https://github.com/everfu/hexo-theme-solitude
+
 #
 # Guide: https://solitude.js.org
 # You can get more detailed help from the guide
@@ -27,7 +28,7 @@ site:
 # --------------------------- start ---------------------------
 # Navigation bar
 # 导航栏
-#nav:
+nav:
   # Left Box
   # 左侧盒子
   #group:
@@ -37,7 +38,7 @@ site:
   # Menu
   # 菜单
   menu:
-     首页: / # name: link
+     首页: / || fas fa-home # name: link
      文章: # name
        归档: /archives/ || fas fa-folder-closed # item name: link || icon
        分类: /categories/ || fas fa-clone
@@ -46,23 +47,22 @@ site:
        #朋友圈: /moments/ || fas fa-wifi
        #友情链接: /links/ || fas fa-user-group
        #宝藏博主: javascript:travelling() || fas fa-gift
-     我的:
-       关于: /about/ || fas fa-user
+     我的:       
        追番: /bangumis/ || fas fa-tv 
        #装备: /kit/ || fas fa-laptop
        #音乐馆: /music/ || fas fa-music
        留言板: /message/ || fas fa-comments 
-
+       关于: /about/ || fas fa-user
   # Right button
   # 右侧按钮
   right:
     random: false # Random article / 随机文章按钮
     custom:
-      - name: 开往 # 名字
-        url: https://www.travellings.cn/go.html # 跳转链接
-        icon: fas fa-train # 图标
-        onclick: # 点击事件
-        id: travellings_button # id
+      - name: 开往 # 鼠标悬停时显示的文字内容
+        url: https://www.travellings.cn/go.html # 点击后跳转的完整链接
+        icon: fas fa-train # FontAwesome 图标，你可以换成别的
+        target: _blank # 建议增加此项，让链接在后台新标签页打开，不打断阅读
+        onclick: # 除非有特殊 JS 逻辑，
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -73,7 +73,7 @@ hometop:
   banner:
     title: 分享技术<br >与科技生活 # 大字
     desc:
-      一个热爱生活的人 # 小字
+      - 一个热爱生活的人 # 小字
       # - 我只是一个普通的程序员
       # - 但我有一个不平凡的梦想
       # - 我希望能够改变世界
@@ -136,7 +136,7 @@ aside:
      #介绍 / Introduction
     description: 只有迎风，风筝才能飞得更高。
      #内容 / Content
-    content:  这是我的博客 / This is my Blog
+    content: "这是我的博客/blog138gl.com<br> - 发觉新鲜事物,分享快乐趣闻<br> - 记录精彩瞬间，享受幸福时刻"
     state:
       morning: ✨ 早上好，新的一天开始了
       noon: 🍲 午餐时间
