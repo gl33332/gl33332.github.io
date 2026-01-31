@@ -36,26 +36,20 @@ nav:
        #我的导航: https://dh.138gl.com || https://favicon.vemetric.com/dh.138gl.com?size=64 # name: url || icon
        #我的影视: https://tv.138gl.com || https://favicon.vemetric.com/tv.138gl.com?size=64
   # Menu
-  # 菜单
+   # 菜单
   menu:
-     首页: / || fas fa-home # name: link
-     文章: # name
-       归档: /archives/ || fas fa-folder-closed # item name: link || icon
-       分类: /categories/ || fas fa-clone
-       标签: /tags/ || fas fa-tags
-     #友链:
-       #朋友圈: /moments/ || fas fa-wifi
-       #友情链接: /links/ || fas fa-user-group
-       #宝藏博主: javascript:travelling() || fas fa-gift
-     我的:       
-       追番: /bangumis/ || fas fa-tv 
-       #装备: /kit/ || fas fa-laptop
-       #音乐馆: /music/ || fas fa-music
-       留言板: /message/ || fas fa-comments 
-       关于: /about/ || fas fa-user
+    首页: /
+    文章: 
+      归档: /archives/ || fas fa-folder-closed
+      分类: /categories/ || fas fa-clone
+      标签: /tags/ || fas fa-tags
+    我的:
+      追番: /bangumis/ || fas fa-tv 
+      留言板: /message/ || fas fa-comments 
+      关于: /about/ || fas fa-user
   # Right button
   # 右侧按钮
-  right:
+right:
     random: false # Random article / 随机文章按钮
     custom:
       - name: 开往 # 鼠标悬停时显示的文字内容
@@ -136,7 +130,7 @@ aside:
      #介绍 / Introduction
     description: 只有迎风，风筝才能飞得更高。
      #内容 / Content
-    content: "这是我的博客/blog138gl.com<br> - 发觉新鲜事物,分享快乐趣闻<br> - 记录精彩瞬间，享受幸福时刻"
+    content: "这是我的博客blog138gl.com<br> - 发觉新鲜事物,分享快乐趣闻<br> - 记录精彩瞬间,享受幸福时刻"
     state:
       morning: ✨ 早上好，新的一天开始了
       noon: 🍲 午餐时间
@@ -404,16 +398,16 @@ related_post:
 # Custom right menu
 # 自定义右键菜单
 right_menu:
-  enable: false
+  enable: true
   # Whether to display the hot comment switch.
   # 是否显示热门评论开关
-  commentBarrage: false
+  commentBarrage: true
   # Whether to display the browser's context menu when hold Ctrl key.
   # 是否在按住 Ctrl 键时显示浏览器右键菜单
-  ctrlOriginalMenu: false
+  ctrlOriginalMenu: true
   # Simplified and Traditional Chinese translation.
   # 简繁体转换
-  translate: false
+  translate: true
   # Custom list
   # 自定义列表
   custom_list:
@@ -767,7 +761,7 @@ comment:
   use: twikoo # waline, twikoo, valine, artalk, giscus # Up to two comment systems can be turned on at the same time
   # Whether to display the hot comment switch.
   # 是否显示热门评论开关
-  commentBarrage: false
+  commentBarrage: true
   # Lazy load
   # 懒加载评论区
   lazyload: true
@@ -791,7 +785,7 @@ comment:
   # 最新评论(⚠️ 需要先配置评论)
   newest_comment:
     enable: true
-    storage: 0 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
+    storage: .5 # 缓存时间 1: 1天 / .5 : 半天 / Cache time 1: 1 day .5 : half a day
     limit: 5 # 评论数 / Number of comments
 # Twikoo: https://solitude.js.org/configuration/comment/twikoo
 twikoo: # https://twikoo.js.org/
@@ -836,12 +830,14 @@ search:
   enable: true
   type: local # local / algolia / docsearch
   tags:
-    # - Solitude
-    # - Hexo
+     - Hexo
   # Algolia
   algolia:
-    # hits:
-    #   per_page: 6
+    appId: # 保持为空即可
+    apiKey: # 保持为空即可
+    indexName:  
+    hits:
+      per_page: 6
 
   # Local search
   local:
@@ -903,33 +899,7 @@ inject:
   head:
     # 原有的即刻说说样式
     - "<style>.essay_bar_icons i::after { content: '即刻说说'; margin-left: 8px; font-weight: bold; } #essay-mini-text { font-weight: bold; font-size: 14px; margin-right: 10px; white-space: nowrap; display: flex; align-items: center; }</style>"
-    
-    # 【新增】导航栏按钮气泡提示 + 侧边栏磁贴美化
-    - |
-      <style>
-        /* 导航栏气泡提示 */
-        .nav-button:hover::after {
-          content: attr(title);
-          position: absolute;
-          bottom: -35px;
-          left: 50%;
-          transform: translateX(-50%);
-          background: #000;
-          color: #fff;
-          padding: 4px 10px;
-          border-radius: 8px;
-          font-size: 12px;
-          white-space: nowrap;
-          z-index: 1000;
-        }
-        /* 侧边栏磁贴悬浮效果 */
-        .card-category-list-item a:hover {
-          transform: scale(1.05);
-          transition: 0.3s;
-          background: var(--theme-color) !important;
-          color: white !important;
-        }
-      </style>
+    - <link rel="stylesheet" href="/css/custom.css">
   body:
     - "<script>function injectEssayText(){ const bbtalk = document.getElementById('bbtalk'); if (bbtalk && !document.getElementById('essay-mini-text')) { const span = document.createElement('span'); span.id = 'essay-mini-text'; span.innerText = '即刻说说'; bbtalk.insertBefore(span, bbtalk.firstChild); } } document.addEventListener('DOMContentLoaded', injectEssayText); document.addEventListener('pjax:complete', injectEssayText);</script>"
 # --------------------------- end ---------------------------
