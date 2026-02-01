@@ -2,13 +2,12 @@
 title: Hexo 基础命令：从本地撰写到一键部署
 date: 2025-04-01 12:00:00
 updated: 2026-01-31 00:45:00
-type: 教程
+categories:
+  - 教程
 cover: https://lmage.138gl.com/PicGo/2025/04/bw-fm001.jpg
 top: 1
 toc: true
 typeit: true
-categories:
-  - 教程
 tags:
   - Hexo
   - 博客搭建
