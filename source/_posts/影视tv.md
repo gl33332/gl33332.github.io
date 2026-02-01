@@ -3,7 +3,6 @@ title: 影视TV：基于 LibreTV 的全能开源影音平台
 date: 2025-05-30 12:00:00
 categories:
   - 影视
-  - 生活
 tags:
   - 影视
   - 开源软件

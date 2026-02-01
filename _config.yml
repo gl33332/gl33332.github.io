@@ -5,8 +5,13 @@
 # Site
 title: 同行陌路两不疑
 subtitle: ''
-description: ''
+description: '记录技术实践与生活观察，分享工具与教程，持续沉淀可复用的经验。'
 keywords:
+  - 技术
+  - 教程
+  - 工具
+  - Hexo
+  - 生活
 author: 同行陌路两不疑
 language: zh-CN
 timezone: ''

@@ -130,7 +130,7 @@ aside:
      #介绍 / Introduction
     description: 只有迎风，风筝才能飞得更高。
      #内容 / Content
-    content: "这是我的博客blog138gl.com<br> - 发觉新鲜事物,分享快乐趣闻<br> - 记录精彩瞬间,享受幸福时刻"
+    content: "这是我的博客blog.138gl.com<br> - 发觉新鲜事物,分享快乐趣闻<br> - 记录精彩瞬间,享受幸福时刻"
     state:
       morning: ✨ 早上好，新的一天开始了
       noon: 🍲 午餐时间
@@ -252,23 +252,23 @@ post:
   meta:
     # Release date
     # 发布日期
-    date: false
+    date: true
     # Update date
     # 更新日期
-    updated: false
+    updated: true
     # Location
     # 位置
     locate: false
     # Number of words
     # 字数
-    wordcount: false
+    wordcount: true
     # uv
-    readtime: false
+    readtime: true
     # pv
     pv: false
     # Comment count
     # 评论数
-    comment: false
+    comment: true
   # Reward
   # 打赏
   award:

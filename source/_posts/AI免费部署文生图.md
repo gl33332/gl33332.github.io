@@ -3,8 +3,7 @@ title: AI 免费部署指南：利用 Cloudflare Workers 零成本搭建文生�
 date: 2025-08-19 12:00:00
 updated: 2026-01-27 17:29:02
 categories:
-  - 工具
-  - AI
+  - 技术
 tags:
   - Cloudflare
   - AI部署
