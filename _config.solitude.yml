@@ -734,7 +734,7 @@ extends:
   head:
     - <link rel="stylesheet" href="/schedule/schedule.css">
   body:
-    - <script src="https://npm.elemecdn.com/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>
+    - <script src="https://cdn.jsdelivr.net/npm/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>
     - <script src="/schedule/schedule.js"></script>
 # --------------------------- end ---------------------------
 

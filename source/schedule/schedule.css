@@ -13,25 +13,31 @@
 /* === 日历卡片布局 (Calendar) === */
 #card-widget-calendar .item-content {
   display: flex;
+  /* 左右两栏顶部对齐 */
+  align-items: flex-start;
 }
 
 #calendar-area-left {
-  width: 45%; 
-  position: relative;
+  width: 45%;
+  /* 农历改为正常流后，不需要 relative + padding-bottom 预留 */
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: flex-start;
   align-items: center;
-  gap: 4px;
+  gap: 0px;
+  /* 强制与右侧顶线对齐（右侧容器有内边距） */
+  padding-top: 6px;
 }
 
 #calendar-area-right {
-  width: 55%; 
-  padding: 4px;
+  width: 55%;
+  /* 右侧容器保留左右/底部间距，但顶部固定 6px 用于对齐 */
+  padding: 6px 4px 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* 右侧日历从顶部开始排，和左侧对齐 */
+  justify-content: flex-start;
 }
 
 #calendar-main {
@@ -39,45 +45,49 @@
 }
 
 #calendar-week {
-  height: 1.2rem;
+  height: 1.1rem;
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: 700;
   align-items: center;
   display: flex;
   color: var(--efu-secondtext);
+  margin-top: 0;
 }
 
-/* 再次微调上提：确保 20 的底边与右侧 31 齐平 */
+/* 再次微调上提：给农历留空间 */
 #calendar-date {
-  height: 3.4rem;
+  height: 2.85rem;
   line-height: 1;
-  font-size: 58px; 
+  font-size: 52px;
   letter-spacing: 1px;
   color: var(--efu-main);
   font-weight: 700;
   align-items: center;
   display: flex;
+  margin-top: -4px;
 }
 
 #calendar-solar {
   font-size: 11px;
   white-space: nowrap;
   color: var(--efu-secondtext);
+  margin-top: -6px;
 }
 
 #calendar-lunar {
   font-size: 11px;
   color: var(--efu-secondtext);
   white-space: nowrap;
-  padding: 2px 6px;
-  border-radius: 999px;
-  background: var(--efu-card-bg);
-  border: 1px solid var(--efu-card-border);
-  margin-top: 4px;
-  position: absolute;
-  right: -4px;
-  bottom: -2px;
+  /* 去掉农历外框（胶囊背景/边框），更协调也更省空间 */
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  /* 正常文档流排版，避免覆盖阳历 */
+  position: static;
+  transform: none;
+  margin-top: 2px;
 }
 
 /* 日历日期样式 */
@@ -102,6 +112,11 @@
   color: var(--efu-secondtext);
 }
 
+/* 空白占位（非本月格子） */
+#calendar-main a.empty {
+  opacity: 0;
+}
+
 .calendar-r0, .calendar-r1, .calendar-r2, .calendar-r3, .calendar-r4, .calendar-r5, .calendar-rh {
   height: 1.2rem;
   display: flex;
@@ -118,6 +133,8 @@
 /* === 进度条卡片布局 (Schedule) === */
 #card-widget-schedule .item-content {
   display: flex;
+  /* 左右两栏顶部对齐 */
+  align-items: flex-start;
 }
 
 #schedule-area-left {
@@ -130,12 +147,13 @@
 }
 
 #schedule-area-right {
-  width: 65%; 
+  width: 65%;
   height: 100px;
   padding: 0 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* 从顶部开始排，和左侧对齐 */
+  justify-content: flex-start;
   align-items: center;
 }
 
