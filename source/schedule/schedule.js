@@ -21,6 +21,23 @@ function cardRefreshTimes() {
     e.querySelector("#pBar_month").max = daysInMonth;
     e.querySelector("#p_span_month").innerHTML = ((now.getDate() / daysInMonth) * 100).toFixed(1) + "%";
     e.querySelector(".schedule-r1 .aside-span2 a").innerHTML = Math.max(0, daysInMonth - now.getDate());
+
+    // 本周进度（以周一为一周开始，周日结束）
+    // dayIndex: 周一=1 ... 周日=7
+    const dayIndex = ((now.getDay() + 6) % 7) + 1;
+    const weekRemaining = Math.max(0, 7 - dayIndex);
+    const weekPercent = ((dayIndex / 7) * 100).toFixed(1) + "%";
+
+    const pBarWeek = e.querySelector("#pBar_week");
+    const pSpanWeek = e.querySelector("#p_span_week");
+    const pWeekRemain = e.querySelector(".schedule-r2 .aside-span2 a");
+
+    if (pBarWeek) {
+      pBarWeek.max = 7;
+      pBarWeek.value = dayIndex;
+    }
+    if (pSpanWeek) pSpanWeek.innerHTML = weekPercent;
+    if (pWeekRemain) pWeekRemain.innerHTML = weekRemaining;
   }
 }
 
@@ -43,22 +60,33 @@ function cardTimes() {
     c.innerHTML = "";
 
     let n = 1;
-    // 关键修复：确保 class 名字与你的 schedule.css 布局匹配
-    for (let i = 0; i < 6; i++) {
+
+    // 固定 5/6 行：大多数月份显示 5 行；只有当月跨度需要时才显示第 6 行。
+    // 判断依据：日历网格总格子数 = firstDay(0-6) + dates(28-31)
+    // <=35 → 5 行足够；>35 → 需要 6 行
+    const rowsCount = (firstDay + dates) <= 35 ? 5 : 6;
+
+    // 渲染 rowsCount 行；超出本月天数的格子留空（不显示不存在的日期）
+    for (let i = 0; i < rowsCount; i++) {
       const row = document.createElement("div");
       row.className = "calendar-rh"; // 使用 row 布局类名
       for (let j = 0; j < 7; j++) {
         const cell = document.createElement("div");
         cell.className = "calendar-d0"; // 使用 cell 布局类名
-        if ((i === 0 && j >= firstDay) || (i > 0 && n <= dates)) {
+
+        const isInThisMonth = (i === 0 && j >= firstDay && n <= dates) || (i > 0 && n <= dates);
+        if (isInThisMonth) {
           const isToday = n === date ? " class='now'" : "";
           cell.innerHTML = `<a${isToday}>${n}</a>`;
           n++;
+        } else {
+          // 留空，保持对齐
+          cell.innerHTML = `<a class='empty'></a>`;
         }
+
         row.appendChild(cell);
       }
       c.appendChild(row);
-      if (n > dates) break;
     }
 
     // 农历逻辑

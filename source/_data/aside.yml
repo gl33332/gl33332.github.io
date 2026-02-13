@@ -40,4 +40,12 @@
           <progress max="31" id="pBar_month"></progress>
         </div>
       </div>
+      <div class="schedule-r2">
+        <div class="schedule-d0">本周</div>
+        <div class="schedule-d1">
+          <span id="p_span_week" class="aside-span1"></span>
+          <span class="aside-span2">还剩<a></a>天</span>
+          <progress max="7" id="pBar_week"></progress>
+        </div>
+      </div>
     </div>
