@@ -100,7 +100,7 @@ function cardTimes() {
         if(lunarElem) lunarElem.innerHTML = `${ganzhiYear}${animalYear}年&nbsp;${lunarMon}${lunarDay}`;
     }
 
-    const nyDate = new Date("2026/02/17 00:00:00");
+    const nyDate = new Date("2027/02/05 00:00:00");
     const daysToNY = Math.ceil((nyDate - now) / 86400000);
     const dayOfYear = Math.floor((now - new Date(year, 0, 1)) / 86400000) + 1;
 
