@@ -13,7 +13,6 @@ function cardRefreshTimes() {
     asideDay = (now - asideTime) / 86400000;
     e.querySelector("#pBar_year").value = asideDay;
     e.querySelector("#p_span_year").innerHTML = ((asideDay / 365) * 100).toFixed(1) + "%";
-    // 这里的查询路径必须精确匹配 aside.yml 里的层级
     e.querySelector(".schedule-r0 .aside-span2 a").innerHTML = Math.max(0, (365 - asideDay).toFixed(0));
     
     const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
@@ -22,8 +21,6 @@ function cardRefreshTimes() {
     e.querySelector("#p_span_month").innerHTML = ((now.getDate() / daysInMonth) * 100).toFixed(1) + "%";
     e.querySelector(".schedule-r1 .aside-span2 a").innerHTML = Math.max(0, daysInMonth - now.getDate());
 
-    // 本周进度（以周一为一周开始，周日结束）
-    // dayIndex: 周一=1 ... 周日=7
     const dayIndex = ((now.getDay() + 6) % 7) + 1;
     const weekRemaining = Math.max(0, 7 - dayIndex);
     const weekPercent = ((dayIndex / 7) * 100).toFixed(1) + "%";
@@ -54,25 +51,20 @@ function cardTimes() {
     const monthData = [31, isLeap ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     dates = monthData[month];
 
-    // 计算日历起始位置
     const firstDay = new Date(year, month, 1).getDay();
     const c = e.querySelector("#calendar-main");
     c.innerHTML = "";
 
     let n = 1;
 
-    // 固定 5/6 行：大多数月份显示 5 行；只有当月跨度需要时才显示第 6 行。
-    // 判断依据：日历网格总格子数 = firstDay(0-6) + dates(28-31)
-    // <=35 → 5 行足够；>35 → 需要 6 行
     const rowsCount = (firstDay + dates) <= 35 ? 5 : 6;
 
-    // 渲染 rowsCount 行；超出本月天数的格子留空（不显示不存在的日期）
     for (let i = 0; i < rowsCount; i++) {
       const row = document.createElement("div");
-      row.className = "calendar-rh"; // 使用 row 布局类名
+      row.className = "calendar-rh";
       for (let j = 0; j < 7; j++) {
         const cell = document.createElement("div");
-        cell.className = "calendar-d0"; // 使用 cell 布局类名
+        cell.className = "calendar-d0";
 
         const isInThisMonth = (i === 0 && j >= firstDay && n <= dates) || (i > 0 && n <= dates);
         if (isInThisMonth) {
@@ -80,7 +72,6 @@ function cardTimes() {
           cell.innerHTML = `<a${isToday}>${n}</a>`;
           n++;
         } else {
-          // 留空，保持对齐
           cell.innerHTML = `<a class='empty'></a>`;
         }
 
@@ -89,15 +80,16 @@ function cardTimes() {
       c.appendChild(row);
     }
 
-    // 农历逻辑
+    // 农历逻辑（修复时间边界问题）
     if (typeof chineseLunar !== 'undefined') {
-        const lunarDate = chineseLunar.solarToLunar(now);
+        const today = new Date(year, month, date); // 强制 00:00:00 避免跨日误差
+        const lunarDate = chineseLunar.solarToLunar(today);
         const animalYear = chineseLunar.format(lunarDate, "A");
         const ganzhiYear = chineseLunar.format(lunarDate, "T").slice(0, -1);
         const lunarMon = chineseLunar.format(lunarDate, "M");
         const lunarDay = chineseLunar.format(lunarDate, "d");
         const lunarElem = e.querySelector("#calendar-lunar");
-        if(lunarElem) lunarElem.innerHTML = `${ganzhiYear}${animalYear}年&nbsp;${lunarMon}${lunarDay}`;
+        if (lunarElem) lunarElem.innerHTML = `${ganzhiYear}${animalYear}年&nbsp;${lunarMon}${lunarDay}`;
     }
 
     const nyDate = new Date("2027/02/05 00:00:00");
@@ -108,7 +100,7 @@ function cardTimes() {
     e.querySelector("#calendar-date").innerHTML = date.toString().padStart(2, "0");
     e.querySelector("#calendar-solar").innerHTML = `${year}年${month+1}月&nbsp;第${dayOfYear}天`;
     const sd = document.getElementById("schedule-days");
-    if(sd) sd.innerHTML = daysToNY;
+    if (sd) sd.innerHTML = daysToNY;
   }
 }
 
