@@ -1,0 +1,198 @@
+# 悬浮标签模块
+authorinfo:
+  leftTags:
+    - 🤖️ 数码科技爱好者
+    - 🔍 分享与热心帮助
+    - 🏠 智能家居小能手
+  rightTags:
+    - 脚踏实地行动派 🏃
+    - 团队小组发动机 🧱
+    - 壮汉人狠话不多 💢
+  image: https://tc.138gl.com/api/rfile/PicGo_2025_04_IMG_tb_tx01_100.100.jpg
+
+# 标题
+title: 关于本站
+
+# 介绍块
+# 这个模块必须写完整，如果不需要可以不写
+contentinfo: # 顶部个人信息展示
+  sup: 你好，很高兴认识你👋
+  name: 同行陌路两不疑 # 名称
+  title: 商人 # 介绍
+  tip: 追求
+  slogan: 源于<br>热爱而去创造
+  mask:
+    - 优秀的产品
+    - 出色的设计
+    - 高效的编程
+    - 人性化的用户体验
+
+# 技能图标轮播块
+# 此模块和生涯模块在一行，如不写则生涯模块单独占满一行。
+# 主要就是 tags 中的 img 和 icon 两种，其中 img 是图片地址，icon 是图标名称，你可以在 Skill Icons 中找到图标名称，你也可以自己寻找优质的图片图标。
+skills: # 根据需求添加
+  title: 技能
+  subtitle: 开启创造力
+  tags:
+    - title: Java
+      color: "#fff"
+      icon: fab fa-java
+    - title: Docker
+      color: "#57b6e6"
+      icon: fab fa-docker
+    - title: Node
+      color: "#333"
+      icon: fab fa-node
+    - title: Vue
+      color: "#b8f0ae"
+      icon: fab fa-vuejs
+    - title: JS
+      color: "#f7cb4f"
+      icon: fab fa-js
+    - title: HTML
+      color: "#e9572b"
+      icon: fab fa-html5
+    - title: Git
+      color: "#df5b40"
+      icon: fab fa-git
+
+# 生涯模块
+# 生涯模块和技能图标轮播模块在一行，如不写则技能图标轮播模块单独占满一行。
+careers:
+  title: 生涯
+  subtitle: 无限进步
+  items:
+    - school: 软件工程
+      major: 学习
+      color: "#357ef5"
+  image: https://cdn.lightxi.com/cloudreve/uploads/2025/07/31/y5BrUhFv_67a216483c354.webp
+
+# 性格模块
+personalities:
+  tips: 性格
+  title: 主人公
+  color: "#56a178"
+  type: ENFJ-A / ENFJ-T
+  image: https://cdn.lightxi.com/cloudreve/uploads/2025/07/31/4jR76Exr_enfj.svg
+  link: https://www.16personalities.com/
+  linkText: 16personalities
+  typeLink: https://www.16personalities.com/ch/esfj-人格
+  typeName: 主人公
+  myphoto: https://imgbed.138gl.com/file/未分类/xiongmao_2026-01-27_08-10-05.webp
+
+# 座右铭
+motto:
+  title: 座右铭
+  prefix: 破釜沉舟，
+  content: 砥砺前行。
+
+# 特长模块
+expertise:
+  title: 特长
+  prefix: 特别长——————————
+  specialist: 专家
+  content: 专门有个家。。。。。。
+  level: 睡觉
+
+# 游戏模块
+# 这个模块可以写多个，但最好不要超过 4 个。
+game:
+  - title: 游戏爱好
+    img: https://tc.138gl.com/api/cfile/AgACAgUAAyEGAASKP0RDAAOraWImaLtOVY298yxmb6l7Y3R_wkYAAsMNaxtaWRBXGiREHQcPr4oBAAMCAAN5AAM4BA
+    subtitle: 英雄联盟
+    box_shadow: "0 -69px 203px 11px #04120f inset"
+    # icon_group:
+    #   - https://7.isyangs.cn/66/6738b472ce11f-66.webp
+    #   - https://7.isyangs.cn/66/6738b48045a5b-66.webp
+# 爱好模块
+likes:
+  - type: "comic"
+    tips: 爱好番剧 # 右上角提示
+    title: 追番 # 标题
+    subtips: "动漫" # 左下小字，可不要
+    list: # 最好就是五个或以上，相信你们肯定没那么少的。
+      - name: 凡人修仙传 # 动漫或影视名
+        href: https://search.bilibili.com/all?keyword=凡人修仙传 # B站或豆瓣某个位置
+        cover: https://imgbed.138gl.com/file/blog/追番/凡人修仙传(1).webp # 封面图
+      - name: 仙逆 # 动漫或影视名
+        href: https://v.qq.com/x/search/?q=仙逆&queryFrom=0 # 腾讯视频某个位置
+        cover: https://imgbed.138gl.com/file/blog/追番/仙逆(1).webp # 封面图
+      - name: 斗破苍穹 # 动漫或影视名
+        href: https://v.qq.com/x/search/?q=斗破苍穹&queryFrom=0 # 腾讯视频某个位置
+        cover: https://imgbed.138gl.com/file/blog/追番/斗破苍穹(1).webp # 封面图
+      - name: 牧神记 # 动漫或影视名
+        href: https://v.qq.com/x/search/?q=牧神记&queryFrom=0 # B站或豆瓣某个位置
+        cover: https://imgbed.138gl.com/file/blog/追番/牧神记(1).webp # 封面图
+      - name: 吞噬星空 # 动漫或影视名
+        href: https://v.qq.com/x/search/?q=吞噬星空&queryFrom=0 # 腾讯视频某个位置
+        cover: https://imgbed.138gl.com/file/blog/追番/吞噬星空(1).webp # 封面图  
+    button: true # false 可以关闭右边按钮
+    button_link: "/bangumis/" # 跳转路径
+    button_text: "观看记录" # 按钮文字
+  - type: like-technology
+    bg: https://lmage.138gl.com/PicGo/2025/05/764409f0-1a89-475c-ae7b-e39fe081b72e-fb.webp
+    tips: 关注偏好
+    title: 计算机、音乐、足球、$$$
+    subtips: 夜猫
+  - type: like-music
+    bg: https://cdn.lightxi.com/cloudreve/uploads/2025/07/31/4ee6GcaT_43ed444540c635ee869d58067ece8452.jpg
+    tips: 音乐偏好
+    title: 民谣、古典、轻音乐
+    subtips: 跟 同行陌路两不疑 一起欣赏更多音乐
+    button: false
+    button_text: 更多推荐
+    button_link: /music/
+
+# 网站统计数据展示模块
+tj: # 统计
+  provider: custom # 值为 51la（51la网站统计）或 custom（自建统计）
+  url: https://umami-api.holyfox.net/ # 需要到51la官网注册自行获取 or 自行搭建 Heo 的 百度统计项目，填写访问地址即可
+  img: https://i.p-i.vip/33/20250725-6883987819a97.webp # 背景
+  desc: 本站采用自建数据统计
+
+# 个人信息模块
+oneself: # 按需填写
+  location: 中国，南宁 # 所在位置
+  birthYear: 八几年 # 生日
+  university: 湖北黄冈公安学院 # 毕业学校
+  major: 刑侦 # 专业
+  occupation: 老板儿 # 职位
+  map: # 你所在位置的地图
+    light: https://j.map.baidu.com/db/Wo # 白天
+    dark: https://j.map.baidu.com/db/Wo # 夜晚
+
+# 自定义
+cause:
+  tip: 心路历程
+  title: 为什么建博客？
+  content:
+    <br>创建这个博客的时候，想要就是能够有一个自己能够<b>积累知识、积累兴趣</b>的地方。和他人分享，会让这些成为积累和沉淀。如果能够帮助到更多的人，帮助更多人解决问题，那一定是非常棒的事情。
+    <br>
+    与大多数垂直类的技术博客不同，这里的种类会非常的繁杂，有<b>技能的教程干货</b>、有<b>生活上的吐槽和妙招</b>、有<b>话题上的思考和想法</b>。一般我研究什么、发现了什么都会分享在这里。
+    <br>
+    这些就是创造这个小站的本意，<b>也是我分享生活的方式</b>。有幸能和你相遇在这里，相信我们能共同留下一段美好记忆。
+    <br>
+
+# 十年之约
+tenyear:
+  tips: 十年之约
+  title: 一个人的寂寞，两个人的错。
+  start: 2026-01-01
+  end: 2036-01-01
+
+# 打赏列表
+#award:
+#  enable: true
+#  description: 感谢赞赏的人，因为你们，让我感受到写博客这件事情能够给你们创造了价值。这会让我在这条路上走得更远。
+#  tips: 总金额：¥ {sum}，将全部用于博客的维护和更新。 # 必须带 {sum}，否则无法显示总金额
+# rewardList: # 底部捐赠
+#  - name: "❖星港◎Star☆"
+#    money: 100
+#    time: 2026-01-01
+#    icon: fab fa-weixin
+#    color: "#09bb07"
+#  - name: "沫塔尔猫"
+#    money: 100
+#    time: 2026-01-01
+#    icon: fab fa-alipay
+#    color: "#1677FF"
