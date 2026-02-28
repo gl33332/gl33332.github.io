@@ -128,4 +128,10 @@ bangumi:
   lazyload: false         # 关键：彻底关闭懒加载，防止图片透明
   webp: false
   extraData: true         # 关键：让它只显示 extra_bangumis.json 里的内容
-  extraOrder: 1           # 关键：extra_bangumis.json 里的条目排在最前（保证第一页先看到）    
+  extraOrder: 1           # 关键：extra_bangumis.json 里的条目排在最前（保证第一页先看到）
+
+# hexo-blog-encrypt
+encrypt:
+  abstract: true
+  message: ⚠️ 商业机密内容，请输入授权密码访问。
+  theme: default
