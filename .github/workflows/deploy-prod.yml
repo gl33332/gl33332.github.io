@@ -1,0 +1,45 @@
+name: Deploy Production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Inject WORK_PASS (runtime only)
+        env:
+          WORK_PASS: ${{ secrets.WORK_PASS }}
+        run: |
+          test -n "$WORK_PASS"
+          sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/_posts/work-gateway.md
+          [ -f source/tools/index.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/tools/index.md || true
+          [ -f source/work/index.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/work/index.md || true
+          [ -f source/work/2026-02-28-石矿项目决策复盘.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/work/2026-02-28-石矿项目决策复盘.md || true
+          [ -f source/work/2026-02-28-潘总项目意向书复盘.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/work/2026-02-28-潘总项目意向书复盘.md || true
+
+      - name: Build
+        run: |
+          npx hexo clean
+          npx hexo generate
+
+      - name: Deploy to main branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: main
+          force_orphan: true
+          commit_message: "prod: ${{ github.sha }}"

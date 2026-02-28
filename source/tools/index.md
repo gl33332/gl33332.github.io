@@ -1,33 +1,44 @@
 ---
 title: 我的轻量级工具箱
-date: 2026-02-28 17:16:20
+date: 2026-02-28 18:00:00
+password: __WORK_PASS__
+abstract: 🛠️ 集中管理常用的技术脚本和配置方案。此页面受保护，仅限内部授权访问。
+message: 🔒 战略级资产库，请输入授权密码。
 ---
 
 > 这里不存垃圾，只留经过实战检验的轻量化重型武器。
 
-## 1) Whisper 本地转写脚本（速记版）
+## 🔤 Whisper 转写脚本
 
-适用：会议录音、电话语音、微信语音导出后批量转写。
+### 背景
+Mac 上需要快速转写音频文件为文本，原生功能有限。
 
+### 解决方案
 ```bash
-# 单文件
-whisper input/demo.m4a --language zh --model medium --output_dir output
+#!/bin/bash
+# Whisper 自动转写脚本
+# 用途：将音频文件转写为文本并保存
 
-# 批量
-for f in input/*.{m4a,mp3,wav}; do
-  [ -e "$f" ] || continue
-  whisper "$f" --language zh --model medium --output_dir output
-done
-```
+INPUT_FILE="$1"
+OUTPUT_DIR="./transcripts"
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+OUTPUT_FILE="$OUTPUT_DIR/${TIMESTAMP}_$(basename "$INPUT_FILE" .m4a).md"
 
-## 2) NAS 映射（Linux）
+mkdir -p "$OUTPUT_DIR"
 
-```bash
-sudo mkdir -p /mnt/nas
-sudo mount -t cifs //NAS_IP/share /mnt/nas \
-  -o username=YOUR_USER,password=YOUR_PASS,iocharset=utf8,vers=3.0
-```
+echo "🎙️ 开始转写: $INPUT_FILE"
+echo "📝 输出文件: $OUTPUT_FILE"
 
-```fstab
-//NAS_IP/share /mnt/nas cifs credentials=/home/gl/.smbcredentials,iocharset=utf8,vers=3.0,_netdev 0 0
-```
+# 使用 Whisper CLI 转写
+openai whisper "$INPUT_FILE" --model base --output_dir "$OUTPUT_DIR" --output_format txt --output_dir "$OUTPUT_DIR"
+
+# 转换为 Markdown 格式
+if [ -f "$OUTPUT_DIR/$(basename "$INPUT_FILE" .m4a).txt" ]; then
+    mv "$OUTPUT_DIR/$(basename "$INPUT_FILE" .m4a).txt" "$OUTPUT_FILE"
+    echo "✅ 转写完成！"
+    echo "📖 内容预览："
+    head -20 "$OUTPUT_FILE"
+else
+    echo "❌ 转写失败"
+    exit 1
+fi
