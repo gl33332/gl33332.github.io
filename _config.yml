@@ -129,3 +129,10 @@ bangumi:
   webp: false
   extraData: true         # 关键：让它只显示 extra_bangumis.json 里的内容
   extraOrder: 1           # 关键：extra_bangumis.json 里的条目排在最前（保证第一页先看到）    
+# Hexo Blog Encrypt
+## Docs: https://github.com/Houfeng/hexo-blog-encrypt
+encrypt:
+  theme: default
+  wrong_password_error: '密码错误，请重试'
+  layout: not_found
+  default_password: ''
