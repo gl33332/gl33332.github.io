@@ -51,3 +51,24 @@ a.site-page.child[href="/work/"] span {
   font-weight: 700;
   background: linear-gradient(135deg, var(--tb-champagne-gold-300), var(--tb-champagne-gold-500));
 }
+
+/* 移动端键盘遮挡规避 */
+@media (max-width: 768px) {
+  #hexo-blog-encrypt,
+  .hbe-container,
+  .decrypt-post {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  #hexo-blog-encrypt input,
+  .hbe-container input,
+  .decrypt-post input {
+    font-size: 16px; /* 避免 iOS 自动放大 */
+    max-width: 92vw;
+  }
+}
