@@ -21,17 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Inject WORK_PASS (runtime only)
-        env:
-          WORK_PASS: ${{ secrets.WORK_PASS }}
-        run: |
-          # test -n "$WORK_PASS" # disabled
-          # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/work-gateway.md
-          [ -f source/tools/index.md ] && # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/tools/index.md || true
-          [ -f source/work/index.md ] && # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/work/index.md || true
-          [ -f source/work/2026-02-28-石矿项目决策复盘.md ] && # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/work/2026-02-28-石矿项目决策复盘.md || true
-          [ -f source/work/2026-02-28-潘总项目意向书复盘.md ] && # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/work/2026-02-28-潘总项目意向书复盘.md || true
-
       - name: Build
         run: |
           npx hexo clean
