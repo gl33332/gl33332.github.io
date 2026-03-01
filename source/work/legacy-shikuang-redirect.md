@@ -1,6 +1,6 @@
 ---
 title: 跳转中
-permalink: /work/2026-02-28-石矿项目决策复盘.html
+permalink: "/work/legacy-shikuang.html"
 layout: false
 ---
 <!doctype html>
