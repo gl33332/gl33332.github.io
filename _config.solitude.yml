@@ -889,7 +889,7 @@ envelope:
 # --------------------------- start ---------------------------
 # Brevity Page
 # 即刻短文
-brevity:
+brevity_disabled:
   enable: true
   home_mini: true
   music: false
