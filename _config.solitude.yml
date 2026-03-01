@@ -902,8 +902,12 @@ inject:
     # 原有的即刻说说样式
     - "<style>.essay_bar_icons i::after { content: '即刻说说'; margin-left: 8px; font-weight: bold; } #essay-mini-text { font-weight: bold; font-size: 14px; margin-right: 10px; white-space: nowrap; display: flex; align-items: center; }</style>"
     - <link rel="stylesheet" href="/css/custom.css">
+    # 指挥官准入系统动画
+    - "<style>.login-card-pulse { animation: hbe-pulse 2s infinite; } @keyframes hbe-pulse { 0% { box-shadow: 0 0 0 0 rgba(0,123,255,0.4); } 70% { box-shadow: 0 0 0 10px rgba(0,123,255,0); } 100% { box-shadow: 0 0 0 0 rgba(0,123,255,0); } }</style>"
   body:
     - "<script>function injectEssayText(){ const bbtalk = document.getElementById('bbtalk'); if (bbtalk && !document.getElementById('essay-mini-text')) { const span = document.createElement('span'); span.id = 'essay-mini-text'; span.innerText = '即刻说说'; bbtalk.insertBefore(span, bbtalk.firstChild); } } document.addEventListener('DOMContentLoaded', injectEssayText); document.addEventListener('pjax:complete', injectEssayText);</script>"
+    # 指挥官准入系统JS
+    - "<script>function initHbe(){ const b=document.getElementById('hbeBtn'); if(b){ b.onclick=function(){ const u=document.getElementById('commander-id').value; const p=document.getElementById('hbePass').value; window.hbePassword=u+':'+p; }; } } document.addEventListener('DOMContentLoaded', initHbe); document.addEventListener('pjax:complete', initHbe);</script>"
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

@@ -134,4 +134,22 @@ bangumi:
 encrypt:
   abstract: true
   message: ⚠️ 商业机密内容，请输入授权密码访问。
-  theme: default
+  template: |
+    <div id="hexo-blog-encrypt" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; font-family: 'Courier New', Courier, monospace;">
+      <div style="background: rgba(15, 15, 15, 0.95); padding: 40px; border: 1px solid #007bff; border-top: 4px solid #007bff; box-shadow: 0 0 30px rgba(0, 123, 255, 0.3); width: 340px; position: relative;">
+        <div style="position: absolute; top: 10px; right: 10px; color: #007bff; font-size: 8px;">TOP SECRET</div>
+        <div style="text-align: center; margin-bottom: 30px;">
+          <div style="color: #007bff; font-size: 10px; letter-spacing: 4px; margin-bottom: 8px;">RESTRICTED AREA</div>
+          <div style="color: #fff; font-size: 20px; font-weight: bold; letter-spacing: 2px;">指挥官安全准入</div>
+        </div>
+        <div style="margin-bottom: 20px;">
+          <input id="commander-id" type="text" placeholder="COMMANDER ID" style="width: 100%; background: #000; border: 1px solid #333; color: #00ff00; padding: 12px; font-size: 13px; outline: none; border-radius: 2px;">
+        </div>
+        <div style="margin-bottom: 30px;">
+          <input id="hbePass" type="password" placeholder="ACCESS CODE" style="width: 100%; background: #000; border: 1px solid #333; color: #00ff00; padding: 12px; font-size: 13px; outline: none; border-radius: 2px;">
+        </div>
+        <button id="hbeBtn" style="width: 100%; background: #007bff; border: none; color: #fff; padding: 12px; cursor: pointer; font-weight: bold; letter-spacing: 2px; transition: 0.3s; text-transform: uppercase;">授权并解密</button>
+        <div id="hbeMessage" style="margin-top: 20px; color: #ff4d4d; font-size: 11px; text-align: center; min-height: 15px;"></div>
+      </div>
+      <div style="margin-top: 20px; color: #444; font-size: 10px; letter-spacing: 1px;">CONNECTED TO COMMANDER-CORE V2.1</div>
+    </div>

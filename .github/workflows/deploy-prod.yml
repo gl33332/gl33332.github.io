@@ -23,14 +23,16 @@ jobs:
 
       - name: Inject WORK_PASS (runtime only)
         env:
+          WORK_USER: ${{ secrets.WORK_USER }}
           WORK_PASS: ${{ secrets.WORK_PASS }}
         run: |
           test -n "$WORK_PASS"
-          sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/_posts/work-gateway.md
-          [ -f source/tools/index.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/tools/index.md || true
-          [ -f source/work/index.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/work/index.md || true
-          [ -f source/work/2026-02-28-石矿项目决策复盘.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/work/2026-02-28-石矿项目决策复盘.md || true
-          [ -f source/work/2026-02-28-潘总项目意向书复盘.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/work/2026-02-28-潘总项目意向书复盘.md || true
+          COMBINED_PASS="${WORK_USER}:${WORK_PASS}"
+          sed -i "s/__WORK_PASS__/${COMBINED_PASS}/g" source/_posts/work-gateway.md
+          [ -f source/tools/index.md ] && sed -i "s/__WORK_PASS__/${COMBINED_PASS}/g" source/tools/index.md || true
+          [ -f source/work/index.md ] && sed -i "s/__WORK_PASS__/${COMBINED_PASS}/g" source/work/index.md || true
+          [ -f source/work/2026-02-28-石矿项目决策复盘.md ] && sed -i "s/__WORK_PASS__/${COMBINED_PASS}/g" source/work/2026-02-28-石矿项目决策复盘.md || true
+          [ -f source/work/2026-02-28-潘总项目意向书复盘.md ] && sed -i "s/__WORK_PASS__/${COMBINED_PASS}/g" source/work/2026-02-28-潘总项目意向书复盘.md || true
 
       - name: Build
         run: |
