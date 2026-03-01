@@ -1,0 +1,443 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>多脑系统演进全记录 | 同行陌路两不疑</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="/css/index.css?v=3.0.21"><link rel="canonical" href="https://gl33332.github.io/work/multibrain-snapshot.html"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- Feature-specific CSS--><!-- aplayer--><!-- swiper--><!-- fancybox ui--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css"><!-- katex--><!-- Open Graph--><meta name="description" content="⚠️ 输入密码。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="多脑系统演进全记录">
+<meta property="og:url" content="https://gl33332.github.io/work/multibrain-snapshot.html">
+<meta property="og:site_name" content="同行陌路两不疑">
+<meta property="og:description" content="⚠️ 输入密码。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gl33332.github.io/img/favicon.png">
+<meta property="article:published_time" content="2026-02-28T10:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-01T14:58:11.922Z">
+<meta property="article:author" content="同行陌路两不疑">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="工具">
+<meta property="article:tag" content="技术">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="生活">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gl33332.github.io/img/favicon.png"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="同行陌路两不疑"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/favicon.png"><link rel="apple-touch-icon" href="/img/favicon.png" sizes="180x180"><script>console.log(' %c Solitude %c ' + '3.0.21' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><link rel="stylesheet" href="/schedule/schedule.css"><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: {"preload":false,"path":"/search.xml"},
+    runtime: '2025-04-01 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。","loading":"搜索中..."},"barrage":{"title":"热评"}},
+    aside: {
+        state: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "🍲 午餐时间",
+            afternoon: "🌞 下午好",
+            night: "早点休息",
+            goodnight: "晚安 😴",
+        },
+        witty_words: ["你可以的","你一定可以的","祝你好运，陌生人"],
+        witty_comment: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: {"avatar":"https://gravatar.com/avatar","commentBarrage":true},
+    lightbox: 'fancybox',
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","barrage":{"open":"显示热评","close":"关闭热评"},"translate":true,"ctrlOriginalMenu":"按住Ctrl+右键可打开浏览器右键菜单"},
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: false,
+    expire: false,
+};</script><script id="config-diff">var PAGE_CONFIG = {
+    is_post: false,
+    is_page: true,
+    is_home: false,
+    page: '',
+    toc: false,
+    comment: true,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body id="body"><div><div id="loading-box" onclick="preloader.endLoading();" style="zoom:1"><div class="loading-bg"><img class="loading-img nolazyload" src="/img/avatar.png" alt="loading image"></div></div><script>const preloader = {
+    isLoaded: false,
+    endLoading: () => {
+        if (!preloader.isLoaded) {
+            document.getElementById('loading-box').classList.add('loaded');
+            preloader.isLoaded = true;
+            preloader.togglePaceDone();
+        }
+    },
+    initLoading: () => {
+        document.getElementById('loading-box').classList.remove('loaded');
+        preloader.isLoaded = false;
+        preloader.togglePaceDone();
+    },
+    togglePaceDone: () => {
+        document.getElementById('body').className = preloader.isLoaded ? 'pace-done' : '';
+    }
+}
+
+window.addEventListener('load', () => {
+    preloader.endLoading();
+});
+
+window.addEventListener('pjax:send', () => {
+    preloader.initLoading();
+});
+
+document.addEventListener('pjax:complete', () => {
+    preloader.endLoading();
+});
+
+setTimeout(() => {
+    preloader.endLoading();
+}, 5000);</script></div><div><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fas fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">互动</div><div class="author-content-item-title">最新评论<a class="recent-comment-more" href="/recentcomments/" title="最近评论"><i class="solitude fas fa-circle-chevron-right"></i></a></div></div><div class="console_recentcomments"><script pjax>(async () => {
+    document.querySelector('.console-card .console_recentcomments').textContent = `加载中...`
+    const emojiReg = /<img class="tk-owo-emotion" [^>]+>/g
+    let cache = utils.saveToLocal.get('twikoo-recent-comments-console')
+    if (cache) {
+        setHtml(document.querySelector('.console-card .console_recentcomments'), cache)
+        return
+    }
+    let ls = []
+
+    await fetch('https://pl.138gl.com/.netlify/functions/twikoo', {
+        method: "POST",
+        body: JSON.stringify({
+            "event": "GET_RECENT_COMMENTS",
+            "includeReply": true,
+            "pageSize": 6
+        }),
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json()).then(async ({data}) => {
+        for (const i of data) {
+            if (i.avatar === undefined) i.avatar = 'https://gravatar.com/avatar/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+            let title = ''
+            if (i.url) {
+                await fetch(i.url).then(res => res.text()).then(html => {
+                    const parser = new DOMParser()
+                    const doc = parser.parseFromString(html, 'text/html')
+                    title = doc.querySelector('title').innerText
+                }).catch(() => {
+                    title = i.url
+                })
+            }
+            if (title.indexOf('|') > 0) {
+                title = title.split('|')[0]
+            }
+            ls.push({
+                avatar: i.avatar,
+                nick: i.nick,
+                title: title,
+                content: i.comment,
+                url: i.url + '#' + i.id,
+                time: i.created
+            })
+        }
+        setHtml(document.querySelector('.console-card .console_recentcomments'), ls)
+        utils.saveToLocal.set('twikoo-recent-comments-console', ls, 0.2)
+    });
+
+    function setHtml(el, data) {
+        el.innerHTML = data.length !== 0 ? data.map(i => `
+            <div class="comment-card" title="${i.title}" onclick="pjax.loadUrl('${i.url}')">
+                <div class="comment-info">
+                    <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                    <div>
+                        <span class="comment-user">${i.nick}</span>
+                    </div>
+                    <time class="comment-time" datetime="${new Date(i.time)}"></time>
+                </div>
+                <div class="comment-content">${formatContent(i.content)}</div>
+                <div class="comment-title">
+                <i class="solitude fas fa-comment"></i>
+                ${i.title}</div>
+            </div>
+        `).join('') : `暂无评论...`
+        if (typeof utils !== 'undefined') utils.diffDateFormat(document.querySelectorAll('.comment-time'))
+        else {
+            document.addEventListener('pjax:complete', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+            document.addEventListener('DOMContentLoaded', () => utils.diffDateFormat(document.querySelectorAll('.comment-time')))
+        }
+    }
+
+    function formatContent(content) {
+        content = content.replace(emojiReg, '表情')
+        content = content.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+        content = content.replace(/<img.*?>/g, '[图片]');
+        content = content.replace(/<a.*?>.*?<\/a>/g, '[链接]');
+        content = content.replace(/<pre.*?>.*?<\/pre>/g, '[代码]');
+        content = content.replace(/<.*?>/g, '');
+        return content
+    }
+})()</script></div></div></div><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/Hexo/">Hexo<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建<sup>1</sup></a><a href="/tags/%E6%8C%87%E5%8D%97/">指南<sup>1</sup></a><a href="/tags/%E7%94%B5%E8%A7%86%E7%9B%B4%E6%92%AD/">电视直播<sup>1</sup></a><a href="/tags/TV%E5%BA%94%E7%94%A8/">TV应用<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%8D%93%E8%BD%A6%E8%BD%BD/">安卓车载<sup>1</sup></a><a href="/tags/X5%E5%86%85%E6%A0%B8/">X5内核<sup>1</sup></a><a href="/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/">开源软件<sup>2</sup></a><a href="/tags/%E5%BD%B1%E8%A7%86/">影视<sup>1</sup></a><a href="/tags/%E7%A7%81%E4%BF%A1/">私信<sup>1</sup></a><a href="/tags/%E9%98%85%E5%90%8E%E5%8D%B3%E7%84%9A/">阅后即焚<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E9%80%9A%E4%BF%A1/">安全通信<sup>1</sup></a><a href="/tags/Cloudflare/">Cloudflare<sup>1</sup></a><a href="/tags/AI%E9%83%A8%E7%BD%B2/">AI部署<sup>1</sup></a><a href="/tags/%E6%96%87%E7%94%9F%E5%9B%BE/">文生图<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="item"><a href="/archives/2026/01/"><span class="date">2026/01</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/08/"><span class="date">2025/08</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/05/"><span class="date">2025/05</span><div class="count-group"><span class="count">2</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/04/"><span class="date">2025/04</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">5</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div><div class="console-btn-item on" id="consoleCommentBarrage" onclick="sco.switchCommentBarrage()"><span class="commentBarrage"><i class="solitude fas fa-comment"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div></div><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/recentcomments/"><div class="headline">评论</div><div class="length-num" id="twikoo_allcount"><i class="solitude fas fa-spinner fa-spin"></i></div><script pjax="pjax">(async () => {
+  await fetch('https://pl.138gl.com/.netlify/functions/twikoo', {
+    method: "POST",
+    body: JSON.stringify({
+      "event": "GET_RECENT_COMMENTS",
+      "includeReply": true,
+      "pageSize": 999
+    }),
+    headers: {'Content-Type': 'application/json'}
+  }).then(res => res.json()).then(async ({data}) => {
+    document.querySelector('#twikoo_allcount').innerHTML = data.length
+  })
+})()</script></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="solitude  fas fa-tv"></i><span>追番</span></a></li><li><a class="site-page child" href="/message/"><i class="solitude  fas fa-comments"></i><span>留言板</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li><li><a class="site-page child" href="/work/"><i class="solitude  fas fa-user-secret"></i><span>🔒 工作台(Private)</span></a></li><li><a class="site-page child" href="/tools/"><i class="solitude  fas fa-toolbox"></i><span>我的轻量级工具箱</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/Hexo/">Hexo<sup>1</sup></a><a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建<sup>1</sup></a><a href="/tags/%E6%8C%87%E5%8D%97/">指南<sup>1</sup></a><a href="/tags/%E7%94%B5%E8%A7%86%E7%9B%B4%E6%92%AD/">电视直播<sup>1</sup></a><a href="/tags/TV%E5%BA%94%E7%94%A8/">TV应用<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%8D%93%E8%BD%A6%E8%BD%BD/">安卓车载<sup>1</sup></a><a href="/tags/X5%E5%86%85%E6%A0%B8/">X5内核<sup>1</sup></a><a href="/tags/%E5%BC%80%E6%BA%90%E8%BD%AF%E4%BB%B6/">开源软件<sup>2</sup></a><a href="/tags/%E5%BD%B1%E8%A7%86/">影视<sup>1</sup></a><a href="/tags/%E7%A7%81%E4%BF%A1/">私信<sup>1</sup></a><a href="/tags/%E9%98%85%E5%90%8E%E5%8D%B3%E7%84%9A/">阅后即焚<sup>1</sup></a><a href="/tags/%E5%AE%89%E5%85%A8%E9%80%9A%E4%BF%A1/">安全通信<sup>1</sup></a><a href="/tags/Cloudflare/">Cloudflare<sup>1</sup></a><a href="/tags/AI%E9%83%A8%E7%BD%B2/">AI部署<sup>1</sup></a><a href="/tags/%E6%96%87%E7%94%9F%E5%9B%BE/">文生图<sup>1</sup></a></div></div></div></div><div><div class="needEndHide" id="rightside"><div class="rs_hide"><button class="translate" type="button" title="简繁转换">简</button><button class="mode" type="button" title="显示模式切换" onclick="sco.switchDarkMode()"><i class="fas fa-circle-half-stroke"></i></button><button class="aside pc" type="button" title="侧边栏" onclick="sco.switchHideAside()"><i class="fas fa-arrows-alt-h"></i></button></div><div class="rs_show"><button class="config" type="button" title="扩展" onclick="document.querySelector(&quot;.rs_hide&quot;).classList.toggle(&quot;show&quot;)"><i class="fas fa-gear fa-spin"></i></button><button class="comment" type="button" title="评论" onclick="sco.scrollTo('post-comment')"><i class="fas fa-comment"></i></button><button class="barrage pc" type="button" title="弹" onclick="sco.switchCommentBarrage()"><span>弹</span></button><button class="top" type="button" title="返回顶部" onclick="sco.toTop()"><i class="fas fa-arrow-up"></i><span id="percent">0</span></button></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a href="/" title="返回博客主页" id="site-name"><span class="title">同行陌路两不疑</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">多脑系统演进全记录</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/bangumis/"><i class="solitude  fas fa-tv"></i><span>追番</span></a></li><li><a class="site-page child" href="/message/"><i class="solitude  fas fa-comments"></i><span>留言板</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li><li><a class="site-page child" href="/work/"><i class="solitude  fas fa-user-secret"></i><span>🔒 工作台(Private)</span></a></li><li><a class="site-page child" href="/tools/"><i class="solitude  fas fa-toolbox"></i><span>我的轻量级工具箱</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fas fa-magnifying-glass"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav></header><main class="layout hide-aside" id="content-inner"><div id="page"><div class="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="b03c855c0eb4878a3a9be1de293c9b30898373b5fc585dfa6207ab721175214f">065886f11a23ff23c2837f0e9a29b52fd83d1c459a1e16d708d51793a852d05fb349a43c7a7992354a366c79d4dd312f6fc5cb0f82ad1ffccfe07cbbe7ef583339ac9dfeb44215d012acd5522107051354f06752bab929f908acada0d6e4f4c04797189bb3383f9fe3594e487d75055dc9d4cecf557e5336f502c8f4aa0dbd4197ce2eade7a2a02342b3c8e9d870cddb83d55721c0fb4a8bd4e7647979fab4ca99b1dfac9148895b3cbc1078541667df4f40e35386c2ae8735ff49a4b12e9b38e9caa16f29280668de412c37a5168f8dda1f0620a1ef087c0159251d8a54fb4ed66159e2b1028609e66e1b83254cdd5fcc4710083f5aa41bbb360ff432e4f594c5caf7b54fb624b3699bc05c9fb1d51f5d0c5d22b85ca7af0adb542e6f3462a519060c00e001c1fe7d8a11dd594bc446cfcc42f9b99743df74e9593680bcaa830a99dc29da36b8ef3226c057b04ad4b616b49613daf7f6a00e4ffe42bd6d09dab68d6c9011ac2ffa862a3f91907a04fb1960327aa880380a253768947dc37595f451d0c2291943cb8205bd5a295593329e10daf5e18534ff6b0f01f75cbf41c7814ba6c8ed84bce548839e526e5a8e020264f72227af87dfc6ec9eba824701d30a77c3e8fab124b5a589b4357b2edbba992889cd9e50cbec261c94da153794d9e05b54fca8a61db90b24217d7cf0fc6a739099f54164d61398c4aef967388f17c72990edfb3852250881aaebe7dcf2330fbb7e2fa8a8214a2df7749a6ace36185566f3104af0e847581c6c2848edc8d9cb8e46cb640f0f2b42f26e402e7f302709ef4832d3c88a863efab6443ce9343485002302008b3a5f35702262d7a09e4f9dc7011760f731cba3cf729eb6af6284db0ef4e0819357ede25e76b053607fe58a599cf2dae7a06d38331a0654bb145ba8ff64e9d756e549560ecebe41eabe7a6cc64fdbef843d77456e9bd62210327b2831aa01f146217376dbb0cfbe02c51ffc4fdbde84efad6c42c9ecfef908e439ba37b92097f89e4cf062b09e6a42c56d49794d66f802f9d2c9d59668df0ddf6596d01fd04fe363efe2480ec5ebd56285aeff390a199577ee0a39e1543d6b0b5aff86c9622197ad900f958a06bd86b8cba7c6f0670284bc5a3c7190d1e60f5b607f552dc638e4730a7a257c1bc50e1f9abb73e9889a69e96c0c56978e0c3e82039ada4608d2492a847cb1bddb3ade1419553c0dc078add6fc65ba6dcb8834d415de773982f9f519590575613241c13f9d600afa2c1fceb3288cc86bee8c29013b6faea118a22d7447c6844ff09a19f1b9de6038bad6d6e03d682361b1b996a0568f3ad890736bc44f644846fd72c5dbc3f32918528f2be84288988f90ea0edaae864e95c8186ba3b71cd2cfc7bdc5c7cb321c42b757c3cf3bc20dd9992953d12a6cf2597fc0bcf80807f098cfbcaa3848268a8cfcd849369f06cd9c3027a809ba753aa3b37b23e061c604561bf1919cb072edf18fc7115bbbc6939b6b90d600d40203ed77602d67f31333406e44efb5f89925627faa947de622811262a7a6d6a0aa6710baae1fbceca5cf6e6cf016d0e418c636821bda21fb8efa97ca4f1fcacb6eee9a3882d388c147df7c187642f14e8d4171228cc0df2652e31c396ef9f5a5fdd3de46023e6b03e068e4a244253031353cca630e1bed081778c7c8c5fc39bf1eb1d7f21d2c1ccbd41ee22e0e3966f913d40b03536d0f3831724cb3179fe2ab61f64148f31dfdf0882cd0c2dad000eb8487801800f6914e50c76090f82db5f317a7ca32710c6d8e40e8eacfbd4482d8b08dffadf2ec47c15a11feed39c79204f7697e4ac58c5ad41e2b89d52c1b4da5f6bc04a5ffbfd01b750f01617389c353718c55029213b709cecec3ae7d4c7d3fce7757f3da0f24f7451dfcd2138b917ec8345f4916d4a7ce52a67d22fb529a754ee0941560ada01ba331cdfdc080fbd49958b9b9f3cf8de7a8d77aa6cd2467939a72d28bfce68780b3f58c33bc40068eea246e53992f6687b8a1664b2ca207acdafc5d814c40fd430d086ac074317ca4173d55e1dcb4f6bed311976d4ea9deac9a3faa133dcacdb82d9203dfb7cd007861bdee2da268fc6931d6b97ec5a97b4cd7780911bafcbf249388f6e033b019413655e8e012201690a33cb23587d452a3085747fa6c07fe646d410d5dfb0bbf25cc315ce104fa534f8b6967572da4c35613656753dc7a46fb23ae644547e8eae18984cc8139580309eb57135f7ff9d2361787dd6562fd49aa3df88d8acafaafc642280773818a348a476f2eb5bef212baa509baa9f13efbde35a995c6abf869fda97aa1d76680dc573a0006f3fcfab9e9b6c1f451ea874c60b9d1ece8422043fb93f6f68426b8747696a8cb952b84db4cc3373582928565c626e412a4ea6400f525d27131f27d354c251dd1859452292d68618bd51bb612796667955f18ec475b96c8c7f90d190c042055c0be58e3a8c2870f97737e9eabfa1bc77d3f393fdc78b04b30eeb69d9ee8a57c0c96cc90607e9ae027e4a6519376eeaf0adb69e5406b856a5964695084c6d4723abf5f7608eb583c33fc80fc2d89d6cf2850a36c52c4e4561872963e6456c9ee7fc50de3abfa0d2783fa8605a8d59bb78e0fcdc7c750229fab809758a912e33b53550554a84afe04ea7ca2097ffc4489eb59bf4501290c1401211eb2b562243a2ee69b5614076ea709496d67d10540332b1a981b535d8235d2b8a568086a2b7a950ac64555c38ddab7b15d0a8e88782c0f069c6061ebcedf3aa49f0e188abe0c2c98996fe7269b17a3a4662092554043b912768d6d18883a63a902805397d0a21ddd1c4475470c8d4a86c31b7fbe67ac9b3188d986695496b42760be207d598c6d26f55759526b4fc7b7d4ca9d59414f4f01fc77eaaa075907ded402405b7fdde24d70ef577783bb9ac940d82c96b5dd80bce414a34ce0bb070dde81ba917a1e265f636d9da3449b83d9941b7947f27b3c70b3f957e4f7f9360f7d5183eb2ba74bd8fefddc54ffbc50b3ee851739dca4d689836149a283f829d5e317ccdfcff84354b0e1f0fe8cf5055d4a3014bf91aba70f0e6981867a385e6cab00906f8aea0f2e53c45ba2bea26145ef85f81ddc20bb81b8a92d8400c77fd64605663b5fa33becb3332d04448909acaf9e2490dc828204236fb94f70914437ba7e41c59875c02f0c4598f0fe5f2d7971e52d15160116c6012bc34a61ab0d5691f143281945cbb219b4e61bc545b17cafafe2bfa7078c1042aecedb560fd3e450a8ae8b6e7f8a6fe0b220dda9c20c009f5f3bccc1a6ecc099decb57827dd16f9eefbd14eacb2b41dc520e40b4d9e64bfdcf4f58cd14f425550e583f2c7347f05745c7a71d49695d92c622b4d5c82bacac9584d042c9e7ecc2ef723a2df8b05998e2fd1aa38fbc1bac3df5bc7ba6f47a8bb2ffd4ee309e048577fb20a1e4c5230fd37dd9db87279b2748583baf7a2fe399cc79d5525a3bd5f5004eff6ad96ff34071cd6865b54481a0f425ac1075db05b3ca1403bcb70aae7f925e6344980c6224b1c7a0dccb889648a1331d67773b43d0ea777fdf2a95fd4d5a560333a3f5f1dc28795cd7a9422e3258b8fd839e4863adc9755aefcc9b0d12230a838bb7fe1e0b5a19a9e6aee9a6bea28e091ed6d556b46ff955ced57ed99f19553fed033e9c979217fd35f253b6aec4d5ac2091896dde089d713e0f76d6a84c7b8f5aed544b973b7da0ccd57355e9b0ddc19d84d64cbad036c4b4deb2338a8e4c92013f22fd03d10d3c2175a86298b94d79cc2f65fb4ba9470c4114be23080c96910396bcde8c8a7af98c4838341168029f7c17454d3259d2aa46e5057d8504d3a186338192e897a9e25800c8f991fd68576688c2c6e72881461a18d9a06cf50186b91a769acb0b9c2c30ac73014261a739182313ac09dd8d42efb27eaaaa400a7c32de55b83b89a1010464923dc514c2d4de6770163b8a401cc3bc765d1c3de8f4040bf6176df245405a32d92620d3c2d590b4910bbdfa16b6a6e954b47c239c5109e845ce998a992812426413db160356f11eb28bea3fcffaec5936ff906ea152fb85a0d7412de5ea980b77dde329d743e4d8a33518ac6a41e406e50de32d85337647bd742e8d0e60fa223ca2a2d93b4a60dba6c58633f76f01c72c43a0c982f2992c7fe7ad6c688e8a56aa7f5b081c47842f56983dcbb0a1c18a3752dda8e1acfdbb216744c09793929b84d0114f44d99f74bd8c79095f8546b6157fbbef9b701c7fc6758fe60287d5c3f120cf523e0d7b9de05247772a8d184fb392d5c97f0b44f5a862c3c9a33304bd71508dcc213bea1de149af6cb610b885b4fb7613ff72ddbcf364eec71395f94bcc591227cb8893c72293548c551d66d9bcec52d291de2b6acf4763857e7ebe2c4af59986fe1138bb4d9ab369765437487e002e4175e8cc0ba9b23adf0161ff52992ae36edbf99f27dbd2efe5018e78d1e9a65440cacafdc421a63bc17f2ec6286e8ca2f2357a1ec601fe64586259d0fd89b089d93e8c89ca59c0efb7e0c2212617997ebb9086b2c1560a27238282f98f474bcd8ae7bb0f4250510b20c57960c3c2fdaac03dcbb2df70a770884a60b6b450a12a74617e58e34ecc85be7c81be4f82ea6f4b10b7c047bfb462c8f008d589bd83efdf53c8d7d6bc2e2780a39172aa95d886b2781a6419438d7e13ade7bb52636dc8e49af400b705bc9bc472e8b382cf98b193f47ab26dfcdcdf1c2c7369be4690d582cc31aaf48d7a0516120eb0e3b28346d7416b16299d61a872a56f5ade0445351bcaa86a0b79d64c2029a7e0c2aae32fddb5de7bdb49b8570fb5c465cfa56993adeaa35154b269dabe78a5f66c1643b519b1b1165eaa15bf304bb8d4108484fbc56fcacee1e73d823e047c0b3c64bcfd7b699d51fbecee889195d6d99397d22ffe0bef69625f999a25bf359b2d7ff6e8099dd90890205cf967cf7a851a71c4aafc1cb39d9c4faf300162a8eee474146d4270ef3ddf2fbff0e7f5d5bef45164f029bcba40aa64951721266f3f32b089b4d3d710051507c4e2eea4c344c27ba310e53e7fb969f106b89c3ff6ef89616d78c2747fadb5cbc3c80df7833a953ea55b6a3fce79e32fbae88f830c4bcea657b0069ef91f39b7c52fe7402a089863cd8db5e4cec35077f3812731840307b4b8b0efa585e81e789b95292a7c788f8759834226cf61b122d8551c59b4711727f1e54a50e787224a49a0b81a28ec9ecf2f2adea6b95befcaecda54ed2305d2f13915c8d7008176f7c5bc1f95713973e6106c1471267d61d13daf43e5f7eeefbedb09f4e6547070329fdfd735d1fa0fce01fab5301e8fd9ea11da5b88089c696f4120134f7f25fbee51d776adb9417590ec5b56e4210f7a6f10646802be1a2beb55e50e9bb67466a1bf67254628408b2230f26979933c1d2661065c0aa2818cf8f5ff19dc56c86e87522bf076cd170841de54db7310625cca7941bb00b865e01a75c873e2fc3d1356ead99f7b2d3d176c8c28b8ff66a311c9664dd73db5bae4735b7e407be240a202e889890d3ddd19bb8ed9e334ed033f77d8c6d6e6deb90bef72aea5642eb2d74e67d050504ec58d1364a536e7940ed4ff07742a59da2446155f19e5a5a3d5e068cfd643b2cc7bfca95eecd85b536adf7103d29e611de703ca6c3117a7f785851fc7d769c21a72f404b81d155e6c979a94a583f30d9427d165aacae9abb1a7fdfa51fd9da77925d3856a36b1c102dbe5cfcb7529408b7d013bf0ecdc1ed25192b6e4c357522c3e7e8fa658af9e036f1dcaa43d0f12db4591fc3f701cdd6cdc465b29e606594795e80610ca35f032fef99ae48fc1d6531b200735acd24a1292f6590408d916f3a25e3823bdf949d99d1e84188bbb1ded97bfd0a55bcc44a7d6a61a3612ff142b214d751f4e959eaae25eed42991a7144e315b5d7ddb95948fd18a5c9f595a442cd4aa0ebb03d7639e0294f003b7295bca380061d19aec1215959989830bbe062dd51d038146f046bcba181a80e812a813063358cdd929c847a06f42a1f1698683adc3c302b726b02e6d93a5496636bf7d8cc742f2a141be5bfd853336c3de591e9987dea50b280b2ebdabbeacbb92530cbf9a47d97e5cfe8626993dbae749ca5cabf2b0f5b8001e497590e45f486c3b45869bd60cb4232355334f344629fe499f45ea019f986869d9c00b546d60226761828a97deae92fd29af5014db78b2e8f790311e57b936da31e59277f31c6443d9675755a4c27b4f094efc6c47a2e73452ceff73cea36cb266848bf9e5d6423cab650428723da985b9671aeb50eed1ad4d0393fd6e0ed276782634b31a9a3698543fbc3e1fe07decfbd6a40e29639b7945f7de4b152c924e81a0bd7bf5390ad3a1f6fa35b9ea23b12fd35ff814cd0f2f17c4b8547253618bed242b8d29436b799f64cfa9d2183c4f5c2350482d22578d3ee0c0aa7727a4308c6beafc4c7a14806e1fc9d3d8fb17691121ec5a1978d37aece7fc3b76f275fc0ff9781b7d3e3994c3d3c8183593661b639079099ae04a85608bbc57d7bacd8ca189ffa7b0b5d48a1eb3fdabf5d3d16da297425eb495cb6244cde8901cb4c0a0075e70d12ec9e3da5eb3bc420ce843317605b167c4befdbef85169f6d716770dabf96c843581f1e38361ecf0b8fd6f1ac1c8ce037e194a452dd6735367ff50f75e0f4798848037951796a2cef81ac683fae30c49c5d2839c154586d7bae101f5a9b2030721a6af366364eab983ad6e973e55be80f3d9b419f2efd29ff5dd37e990bd9865fab1203344e968f36e65b59cfcdc20a939ec991a49a0ed9265227689bebe21eaae47a2caa6260299d10bc8030443b7a2f8ed4df62014886b1ee3db1dbd032ebd84abbd44fd966b1f18c2f37b1a74ca6da03fe8398ce9323081a81b888ef13ef79b1895b0cc491b5b24a27cb9a79d14f605f1379bcd1346a76453b996c882b92b59a40df8bd190a32bd770ec2ab0ddf8d6a1f9e79182c14840bad30c31b10ebb641d31b44ead3718c0de38ffbb804ecbd844d5d22f33ca0f8997e6457fd8417f872f9a79a6ba64d1fab5d5ce4722f2cacc83c6464b0ec26c1dd3f569bc6024c01bf730f6732b7c8891dbdf3d82c4ff2e3800cbb97fbdcaa5318293dc351e8c630810357cf9d768a5fab1b560b656ab3a7885886f11d4e05532afd1c0e239a366164755536f4bdb13f8cfae9bf628832726f36841621ebf2ac1e57aed58caa202d2ca14033bde70866970336ad0e8063f3ee93a58f38b9e02b42897d98f59208bf16dc18912848cd4f0e9206ecdfe41cb273536292b33c78c320fa29c529c687d88881ae2866cc88c857c1655123086ffdd28a2fe97628ff85ba5156d3347ddf63bc9b956fb19391aa12f48c433840fc38bceab892baf20cb06d57ef6848aec49ead7ee5a60791bf8f298ab081a0b00200017da6b772cc9080025d10d75fa9b958843ab910ce66d5a573bc22a03d3152a26dd5d68244edcd3889725080a225b3ab28545d2feba5d535be5ea5764c796c1f976f32789e81240b08f1b34ff69fdafd598e4b93bb8413b7c82abfc200444ef210ac8b1c5e58df8e0954be394e4279c4c8c1c7e7cab4ac77f90ca45029321ac9be9f50c61360eb9b1f6c883b68d0246bc529fdae39c8c29f24a5e619dfe0c38e0ae208502bcd8959e4ebee495e8c703e8b1dbf4971ac26b7a5f29de10f200089173a85de46d902703a244912706dde6f7d757c2a6a670234d9e63587673525f3551317319dc20bddf87c3c5fa1d3ea95f1e051df5550a87125e73574aaf5fa95baa9ccb2ccdb0efd662a0b31b325bb0314ba5d4f038a281d83f6b43e408ac71c7106f22379139ceac2f80dd6ada412041829932b7c66228b34740d66f75111c7fcb29889bf7aedb104cc3d486c5fd30cf81396a00ec1475cb0ff743098d292f0c6a874d275eab4f94fe1d77cedd3db2a794f5fe231ecd9ad6abc064bd70af1c82bc43a2426be0d88352936de02625882c65a17db038dad31cedcf5c8757c8e09773c65ae0f5a08dc9a4aef3e7c69733f1fe7eb70abe7f736a75042d65049cd3c606f273b222783764d83ba4c0d2d7ebed73edbfb5b184ff6cb1d78166fa799002d1d6b8d1d9c76940191148181d9edffca18322120f36579182e1c952708e9b59b6803a8410b9f8e38a07a85684b3ac6bba15890c25dbadb13a6204c1e6edeb83d56e80dbaa63b99b9e2deee49ddbafdb8f37ae35fae336b976f8d6d96090760e47931837ea38d0b6869c8f7f0c97d7c2cd47cc0e681d794566370b2ed17c1bcf7451fa2692cc18ee773009c5997f447c1c1247ece85042d02009139d8a33ed96300658b3f171d935751ae98237eeee75ad525f6df5c9f4d2e9b0ae3e642571858c239d5507b19f0fb6c3bdb99fba2ff9238652d53b1ffb548eacedcf00a8dd5327fe22007ca648104ecf982ae689b57ce70cb40e961ff3cfbffa916701a6c323fa6606d5e272510bce02e2a4081d6ace50bee5ce134208f410b852fa9f9b23ffe5b6905a75e9f86da064d7a1d0f02b127ef615cee111679fc6061af5472e8e5999fd80dfe799bb9461300b61e34f3cf4f1ede5135c787c81258831963c4f5cb736d487905afc5180e6b9e7f62db7ebdeb024d5f0007e394b884ea5cacc8d5bb62c67452a5ce6e9fc13d1941a82336a3db144d187bbf73957f2a4755c9214bee1c474a2c2143888d77727f76b3df9d45d90acc5e3156451c82da8647b549a702f84a3bdc6f9adee86db795cdcae5f7a248b7c7987b238b6e0207cdcfef9a2fff169f07aa61b0a845adc1d4bdc4d9376d4534af7ef80e2ee55e6265008e345f6ff41ea0ccb6ef7de2fcec4542527335197c70ca13feb7d030f49c5ecccec9fd336bedccfe53b964686aadd3e1871db7d0c6f111654470c46d7bfee1e47b8bbf59f283da6872731328f5daf696b0224abf512c82e9f986e515bb5e76c9f04844bff7c1b353fdf067bc901c3e08a4bc736d54c45f478b31c787aee98dfedbca41e9d4204bc2fd65cbc7c74d1865a0b9780a9317a55ef1ddb0211740e4cda5a8c9deb380572b8c02c9f30ef7d47638cf7164f7fd439909d81839dd54899988edc75e94e35a5029d20746342cbed80a703c9bb68f0d14c8a4cac60f95956ee626a2a6b269c751393c0e0485d02e4833b1d48ad6c1f201b7566f01e8c67ed3e8498f91e90a1877c87d1a3925a80e609e9dbeb74ae6964d5c7bbb426d897a43e7e18d8e9760b6c059aed1c4065db4446beda69d95d687b9d954ca6490ed0649890c82b1057eabd6a1436866ab452314eb501e113b77c310260b8400d05627f0965f3c71f20f1748439ef2f3875c080053cd5102b9bcc3a348554c3fbfc8ef788df3b7b68f203a056a12dc74a825e7cae5037b19ca4fe37e92be86db7555f9c853dccc57ee2366a3d54c96d4b735c22d555d160c2be28e4e5b8a3aea8033d0fde68b1b43fa804afa18b118e8531b780b71bf5b5e8047a447586511f356f8ad9dbe79800928805d7eacb90ed3e6e75a581947129e1fba999e672de01a89e154cefc93a834d37c0002593b79986e30c9cf27d99f71f08f85bb0741bb1e580912762f5c586e3a6cab0d52085c06a9b86471b75057cfa5e2974ea36557ac8a8ac1972edcae949ee6f91541806c18e9b87057ce3b1a61e32c36784564f1052716b9ef94101a02650c37d864c04fb858243568b6456864a83d8793019155056544b32948bd889369c3dc193a702a21f0c0993a1c6ef2c9151fb90de81acb842d1467622bfe6d67792bc82b5feb77e68770fb927d129ec744ade70f09ce1df9be71f0e90e50aeb912b04f7190adbcb5e190259b08757dd45a2f5509aabe2b74c39280194a1e1bb7ad7b3dfdd5385d6e4d6bcc1e6cd65e49506f7641c9358ed16cacffa29d705bebad3676a00a1acc7fdfdb866505f22254fc384d6bc6b0aaf4f4bf73341e55c5a8d838d681e051b0cce7d07368e0d7e8c8d09bf7161cca91f60148edfec3a33a33216781f251920ac55b80057be8eab54de4bae37c2b98099b54a3c600fb0040b21c63f542ec816470c6e09eb4d1b5adcb7a873962964d27582973524a703ca7b68d7eaed397514243e1d3c2602280d160a818d5a534e03d1b95f25ba06094587b709027ede0b885784df863aee730e3cf04f2dc22148600befe4588ad911b1544239729c3f86df24590799dc7f6457ee4a1bc478c65ad75e3b59bdae6915328df61576eac5b36a5a83bb495a6b1001a4e5c8fc9559aaecfb17e16406b0bacae28027bc8213e05b514356a511b446c2b4d478aed5692e278ffeb004c8c9b6d0a9263c6833a6bf25995450b285696d51082cac2bd6a3d07f0ab9042280e933d925247147db595edee191dfabcc149b15b63147c5120229be6339467d3e5556de396dd34177edf07a919ba178893e437c7a802aa36e992b2add47fdde2609c7f61dfe9f7ae556b46a978f679eca05a486c0893be941a4b3a7f4d8967106bf80200231c366ab7b025609ce42ac6e91daccad61d3ef6bf99f44d69de0455053223cb701fdcc4dc13b74a01a6d5fc193d27d9d0c44babe58f1ca4f2590c8bda73911ab8714e3ad9c3e5210bae4b7c8abbf0c3370d8f83ecf73b5bd44aa85d54993db5d7d26a52534f7f965825c54c2455fb04c32a23c94dc1d38ef0b587802e49c366fea7d203e5ce35dfcc564530cd3cc09091c76855c6f109b3bef1e4e3556080a3f340779c39f2751d5a399f2da5d2755a269cec430dc327c8c65de654be3d7b383e8e748aaa07cc8c366d45b87aa49f526be766981a96b72f07fa097354e91ea7f1f9fc298d49bf88fb073ce3a3591cf7f6a2d32ae0f17500ac07ae88fd016bd51c2d26310981a5201c8c3c3f4c58ade728977dff0c6c09d4c11bcb3972acc776ff3b9167a3ee7c96f3792bb63aa7f85b03ce738910384545b0f5bc5d74012e175b7712cb99f4f3052ff7c54966091ff6d99ec34df6035c42f40a42363aa1213567f19494b5fbae0c4b63ea37a48cc28da7053a67c1d0d999259d1d7929f429cf07ccfac010fcd87083d1fc64c767d3318055cd5f0969abda40029101a837b38679b47e915af66124da4b9516907cbfc72c7918d43b8255d22030100d583748c80d322b31a172790dfe7345d8fad95d0ed125b5f17b3bb995f53d9cb3b8287b5fe760d8d4ab264e33b41e76322d051836b05e8f308a574795692eb78931a6639c4ef6d90d33e87a5b2ca2f052b3849ee8c142762425bfc901c52876aa152cde29d1cbd3e1c96040022afe93a3b73751f8348c1101f32309c5e47390516a9891fafaff4d00ea4db16bcb69de45080c02946f278c5e1fb1bc08e9287bbed5dfcea5f7ed401a351416c8ec92f68462d2a128a402785e91ee870e2d7845329678eb6a06860bd85bb337bce0780792fe2c6fa7636886e2fd41a77b3176d97378e2788f243e3f18297a0f1d16b1684863e44fb4c8b1024faf2bc31e4540fd7cc33499ecf09b5de776f70b3c36fc721851ede333bdc3c74dfb52ceb1adf88e3d30af93394259dfb5ca762c81e0d08c378dccf929612ace8a58aed32f3b5dff303c01c3507d0be704b2c46e0c0c8463ac7194cd969f646a23a59b8e4905a33dd9cf18dd7f42ef2c51bfe5e7e12db76588408f5e1ff461ac7d82b4ca40fbd091a491ebd8df76fc568cd0a298305ae43a4ead97bbb869fdcc9d9e5fa9ea7297614a78b01a61275fb7a91c20169f047631b5ac8523df17f5bb3c2cafc7444e55c57a1a3df8d261df5393e2bc8baedaf5e191d9c2da2f6087cf25710fa89b77611b30d61c4ba705fd03ae2c9f47fd7edee15b43dc4c4088587f1162eb9180db9b65e2bd44d06dc2928de8e8d54efbbb1d7d078e0be344bcd6e19f49c06bb95c7c8dee78e5c1795499172235f706bd7a70478d03886cbe164e8e66f3b2441f4119fca179d1bf79e25b4186caf92823eb665c6906866ee9ce74a757d5d4b9233b1a4a2b34072337f51256026c281309959ffd90695eee4918719e3fe9435fcf46db1ad7e1ec8fdde11fc52a2e96a25198377d249187b7e12d6d4ee8e10553cf1bf5e37d42061380f6bce7de516f68661a5832e0bc712108e2c455f4f5f25f9b69569ea0505cb3d9ad955669504d903e207580b010d55e2063dda4c1371e43213060ad5bc03fee49806798a8701c4db2c6fbc1ae4247d4ce5fa186846b79ae2483ed38ab9df549703c4c117ad2350e77540b19fe06dcfc11de177131db566744176258b20557567d94767864d28f5c25fdd16fd3079900c70f10c39e251ecc7db960143959ab97a047f75c46070b7408527fe01cb6cd89ba067dac74f029901bdeeeb9bd6408c0f760334f6706d8a7ff0cc1cb06d1c1d9a6486337c81fed090a344130001934e2c7815b57d298a1d452cbf42a1fdd834fe82002a9ff0b44994ef3fee56d32c0311ea4e5dedcef4dd37ae030494d01b9016e0c87a3facc57dbe635bdbd910a181e89cbcbbbf195171f226bb47ef223cc1ddd6b7aac90d49fc7f7c16dc49db47f1719cebcba0fb005e513fdb405d88d55eeea98f5d4d9be5c04baf2b383af373d979464a52269ab65ed6f1247c79b2db13edda360f2a6220fde50decf3dfc76785071ffd04e3c05690c6d4d295b27cf773d64298b27c9a7326a7da1afef845873c7cdb3d393a91578fede6208ac05a15760951c160ba25a542263d58cb1491edb4267a8723857107535dce90ffc204db117532feb4569b6c8ae90a1ba4e87961e5bc50c5636d9d9e43d295ffb594da1f12fafc891316f04e91c17c254501a8a29985de2ad5d50256f7e03e2609e3584c022b9edad64a20057067587729aaa9c4a5e941fc0651169c11c88fe20d551e35f55f44b41aac59460f76e5b2a8fab8c7ff41a2275f2bd55ac23e6204b5bd5bbf698c81af5b613b4f53b47c52f0e263aee3111e97e59d34f2148bce38c85d268b6f4febd763c8f9d7c1566f965f1cb9b451ec4c0fb4c7fe7ece5190d0086d9aece38955f48c31efa491852f68bdfc1d1096e27ca0524af9c3a670eb13f06259005ad23456e4da43cf3789e354e83ac21201210047a31fa6e072208468e95e35068b1b0f5996dbd945aa96b201acb6388f62420cf8f6e7e23992b385487eddbc0028fd86be4e4af72517b5afe8dddc321c80bf90b8a35aba8a0a569e0722caee701f1f59602e9a8870809d022ef0a2a04cf312c749caa37f0dd2f4fbe7f9718fcb2ca3f95df827bbcc6dbcade14ee066f8af52df620ecb0f386b56c83e6352a2ba4761deed5d7fd6ac17e6f425cacf9a96d6fc39ed4f5a5c3084b6c73eda6d494adb7db2664e9ab24edc2f966ceb0ac78d4ce84a2e8d60ebb025c1dacb1f6679a027b690ac85ed0dced3e4b7875dab3f8680408db8db39b85b4b96e46d52a997c254f97d1d5103019f552672820a1d3d886ae1ed4bc3cc18fd81dceb5fa8e91d17fcdf0d03627e729a1fb827abfef268859603f094fab074c670845be1e5db4552a8cb601071d0db333887c3744fcde1fdb2fcd0ae3b91c135a9af9d19369ce64da48a6154fcb45f1ba78301c530659d2145a84426081a77fca8c8672837655fec03fe991b354c011fe92c650e1aac33657aa554e506eab7ab38d0bf336d81e12c9d71881f3205f108c0cb8051dde59a96e8d9009878fcfa3daa4900ac93db69053314cf23df9ee93202009a311290555a7a17eeba3ddf23a769a6f81053cc0a995e1584e59154534d6aa4f5356b033d18e51bb4688ed158b580335b9b72b43eef800732cf813e2d731eedf3c499ba513cb5f0daf2bf6c553fcfda7cb329cf71d3982e59666f4026ffb5e87d436398debfbb82e20026605c26c482155842a755da81ea2757d292c1b6f7e27ab9a2bf0de12ed98d0480c70a3033c9de19de84e89de602f3786d37a18a362929fd05437381595666c2ab132fd0fd77ac545b52a742e3f667b82708b7ea8f63cacce1d3367fcc054d45bdb668e4efde3c950cd2db6c6d274d5be0f829df4e8f41e115c81d71ef2f712384d749d12d669350340535790da6c5e4486b9c14b48ef5c2ed53242b8dc54ef1642ac68d8973ae305e62e1021678d6f14993c7e925cb70dbed75d762db99c325d42df3b2fc3dc2ee632f0a18a37bd6a7a32044191f0887e27efbeb227807772cbdd4622a0c61bd6041573dc2ffbe035c99bb1f94fef752d2c8b89563b4566285681ed86a9d1d70104f499e3b</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">⚠️ 商业机密内容，请输入授权密码访问。</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></div><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fas fa-comment"></i><span> 评论</span></div></div><div class="comment-wrap"><div id="twikoo-wrap"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" onclick="sco.changeWittyWord()"></div></div></div><div class="avatar"><img alt="头像" src="/img/avatar.png"><div class="sticker"><img class="sticker-img" src="/img/24x24徽章.gif" alt="心情贴纸"></div></div><div class="description">这是我的博客blog.138gl.com<br> - 发觉新鲜事物,分享快乐趣闻<br> - 记录精彩瞬间,享受幸福时刻</div><div class="bottom-group"><span class="left"><div class="name">同行陌路两不疑</div><div class="desc">只有迎风，风筝才能飞得更高。</div></span><div class="social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/gl33332" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/472696710" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/2026/01/30/WebViewTvLive%20%E7%BD%91%E8%A7%86%E7%94%B5%E8%A7%86/" title="WebViewTvLive：全平台适配的安卓电视直播神器 (支持车载 Android 16)"><div class="thumbnail"><img alt="WebViewTvLive：全平台适配的安卓电视直播神器 (支持车载 Android 16)" src="https://github.com/hxh19950701/WebViewTvLive/raw/main/images/image_9.jpg"></div><div class="content"><span class="title" href="/2026/01/30/WebViewTvLive%20%E7%BD%91%E8%A7%86%E7%94%B5%E8%A7%86/" title="WebViewTvLive：全平台适配的安卓电视直播神器 (支持车载 Android 16)">WebViewTvLive：全平台适配的安卓电视直播神器 (支持车载 Android 16)</span><span class="categories" href="/2026/01/30/WebViewTvLive%20%E7%BD%91%E8%A7%86%E7%94%B5%E8%A7%86/">软件</span></div></a><a class="aside-list-item" href="/2025/08/19/AI%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E6%96%87%E7%94%9F%E5%9B%BE/" title="AI 免费部署指南：利用 Cloudflare Workers 零成本搭建文生图平台"><div class="thumbnail"><img alt="AI 免费部署指南：利用 Cloudflare Workers 零成本搭建文生图平台" src="https://imgbed.138gl.com/file/blog/文章/AI/1755614107881_TWAIbt-001.png"></div><div class="content"><span class="title" href="/2025/08/19/AI%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E6%96%87%E7%94%9F%E5%9B%BE/" title="AI 免费部署指南：利用 Cloudflare Workers 零成本搭建文生图平台">AI 免费部署指南：利用 Cloudflare Workers 零成本搭建文生图平台</span><span class="categories" href="/2025/08/19/AI%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E6%96%87%E7%94%9F%E5%9B%BE/">技术</span></div></a><a class="aside-list-item" href="/2025/05/30/%E5%BD%B1%E8%A7%86tv/" title="影视TV：基于 LibreTV 的全能开源影音平台"><div class="thumbnail"><img alt="影视TV：基于 LibreTV 的全能开源影音平台" src="https://imgbed.138gl.com/file/dh/dbxc/1748494392477_wdys_2025-05-29_12-49-21.png"></div><div class="content"><span class="title" href="/2025/05/30/%E5%BD%B1%E8%A7%86tv/" title="影视TV：基于 LibreTV 的全能开源影音平台">影视TV：基于 LibreTV 的全能开源影音平台</span><span class="categories" href="/2025/05/30/%E5%BD%B1%E8%A7%86tv/">影视</span></div></a><a class="aside-list-item" href="/2025/05/30/%E7%A7%81%E4%BF%A1%E4%BB%8B%E7%BB%8D/" title="私信介绍：阅后即焚、安全传输的正确打开方式"><div class="thumbnail"><img alt="私信介绍：阅后即焚、安全传输的正确打开方式" src="https://imgbed.138gl.com/file/dh/dbxc/1748588221075_sx_2025-05-30_14-30-4201.png"></div><div class="content"><span class="title" href="/2025/05/30/%E7%A7%81%E4%BF%A1%E4%BB%8B%E7%BB%8D/" title="私信介绍：阅后即焚、安全传输的正确打开方式">私信介绍：阅后即焚、安全传输的正确打开方式</span><span class="categories" href="/2025/05/30/%E7%A7%81%E4%BF%A1%E4%BB%8B%E7%BB%8D/">软件教程</span></div></a><a class="aside-list-item" href="/2025/04/01/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Hexo 基础命令：从本地撰写到一键部署"><div class="thumbnail"><img alt="Hexo 基础命令：从本地撰写到一键部署" src="https://lmage.138gl.com/PicGo/2025/04/bw-fm001.jpg"></div><div class="content"><span class="title" href="/2025/04/01/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Hexo 基础命令：从本地撰写到一键部署">Hexo 基础命令：从本地撰写到一键部署</span><span class="categories" href="/2025/04/01/Hexo-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">教程</span></div></a></div></div><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章总数 :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">建站天数 :</div><div class="item-count" id="runtimeshow"></div></div><div class="webinfo-item"><div class="item-name">最后更新 :</div><time class="item-count" datetime="2026-03-01T14:58:20.178Z"></time></div></div></div></div></div></main><footer id="footer"><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2025 - 2026 By<a class="footer-bar-link" href="/" title="同行陌路两不疑">同行陌路两不疑</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/" title="框架：Hexo">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="主题：Solitude">主题：Solitude</a></div></div><div class="footer-bar-right"></div></div></div><div><div class="comment-barrage needEndHide"></div></div></footer></div><div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fas fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fas fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fas fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fas fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fas fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fas fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-commenttext"><i class="solitude fas fa-comment-medical"></i><span>引用到评论</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude far fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fas fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fas fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fas fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search"><i class="solitude fas fa-magnifying-glass"></i><span>站内搜索</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-commentBarrage" onclick="sco.switchCommentBarrage()"><i class="solitude fas fa-comment"></i><span class="menu-commentBarrage-text">关闭热评</span></div><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fas fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div><div class="rightMenu-item" id="menu-translate"><i class="solitude fas fa-language"></i><span>轉為繁體</span></div></div></div><div id="rightmenu-mask"></div></div><div><!-- Critical scripts loaded synchronously--><script src="/js/utils.js?v=3.0.21"></script><script src="/js/main.js?v=3.0.21"></script><!-- Non-critical scripts loaded asynchronously--><script async src="/js/third_party/waterfall.min.js?v=3.0.21"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><!-- Feature-specific scripts loaded asynchronously--><script defer src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/typeit@8.8.7/dist/index.umd.min.js"></script><script defer src="/js/tw_cn.js?v=3.0.21"></script><!-- UI enhancement scripts--><script defer src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script><!-- Music player scripts--><!-- Cover color processing scripts--><script defer src="https://cdn.jsdelivr.net/npm/colorthief@2.6.0/dist/color-thief.min.js"></script><script defer src="/js/covercolor/local.js?v=3.0.21"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+utils.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- Search functionality--><!-- Right menu functionality--><script defer src="/js/right_menu.js?v=3.0.21"></script><script src="https://cdn.jsdelivr.net/npm/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script><script src="/schedule/schedule.js"></script><div class="js-pjax"><script>(() => {
+    const getCount = () => {
+        const ele = document.querySelectorAll('.twikoo-count')
+        if (!ele) return
+        twikoo.getCommentsCount({
+            envId: 'https://pl.138gl.com/.netlify/functions/twikoo',
+            region: '',
+            urls: [window.location.pathname],
+            includeReply: false
+        }).then(res => {
+            ele.forEach(item => item.textContent = res[0].count)
+        }).catch(err => {
+            console.error(err)
+        })
+    }
+    const init = () => {
+        twikoo.init(Object.assign({
+            el: '#twikoo-wrap',
+            envId: 'https://pl.138gl.com/.netlify/functions/twikoo',
+            region: '',
+            path: window.location.pathname,
+            onCommentLoaded: () => {
+                GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+            }
+        }, null))
+
+         && getCount()
+        sco.owoBig({
+            body: '.OwO-body',
+            item: '.OwO-items li'
+        })
+
+        true && barrageTwikoo()
+    }
+
+    const loadTwikoo = () => {
+        if (typeof twikoo === 'object') setTimeout(init,0)
+        else utils.getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js').then(init)
+    }
+
+    if ('Twikoo' === 'Twikoo' || true) {
+        if (true) utils.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+        else loadTwikoo()
+    } else {
+        window.loadTwoComment = loadTwikoo
+    }
+})()
+</script><script>async function barrageTwikoo() {
+    await fetch("https://pl.138gl.com/.netlify/functions/twikoo", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            event: "COMMENT_GET",
+            accessToken: "",
+            url: window.location.pathname
+        })
+    }).then(async res => {
+        if (!res.ok) throw new Error("HTTP error! status: " + res.status)
+        const data = await res.json();
+        const init = () => {
+            initializeCommentBarrage((data.data).map(item => Object.assign({
+                content: item.comment,
+                nick: item.nick,
+                mailMd5: item.mailMd5,
+                id: item.id
+            })))
+        }
+        if (typeof initializeCommentBarrage === "undefined") await utils.getScript('/js/third_party/barrage.min.js?v=3.0.21').then(init)
+        else init()
+    }).catch(error => console.error("An error occurred while fetching comments: ", error))
+}</script><script>mermaid.run();
+</script></div></div><!-- pjax--><script>let pjax = null;
+
+function initPjax() {
+    if (typeof Pjax === 'undefined') {
+        console.warn('Pjax is not loaded yet, retrying...');
+        setTimeout(initPjax, 100);
+        return;
+    }
+
+    pjax = new Pjax({
+        elements: 'a:not([target="_blank"])',
+        selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+        cacheBust: false,
+        analytics: false,
+        scrollRestoration: false
+    })
+
+    // 将 pjax 实例挂载到全局
+    window.pjax = pjax;
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    document.addEventListener('pjax:complete', () => {
+        window.refreshFn()
+
+        document.querySelectorAll('script[data-pjax]').forEach(item => {
+            const newScript = document.createElement('script')
+            const content = item.text || item.textContent || item.innerHTML || ""
+            Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+            newScript.appendChild(document.createTextNode(content))
+            item.parentNode.replaceChild(newScript, item)
+        })
+
+        GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+    })
+
+    document.addEventListener('pjax:error', (e) => {
+        if (e.request.status === 404) {
+            pjax.loadUrl('/404.html')
+        }
+    })
+}
+
+// 初始化 Pjax
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPjax);
+} else {
+    initPjax();
+}</script><!-- google adsense--><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="solitude fas fa-xmark"></i></button></nav><div class="search-wrap"><div class="search-box"><input class="search-box-input" id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="输入关键词快速查找"></div><div id="search-results"><div id="search-hits"><a class="tag-list" href="javascript:void(0);" onclick="pjax.loadUrl('/tags/Hexo/')">Hexo</a></div></div><div id="search-pagination"></div><div id="search-tips"></div></div></div><div id="search-mask"></div></div><script src="/js/search/local.js?v=3.0.21"></script></body></html>
+        <script>
+            const posts = ["2026/01/30/WebViewTvLive 网视电视/","2025/08/19/AI免费部署文生图/","2025/05/30/影视tv/","2025/05/30/私信介绍/","2025/04/01/Hexo-基础命令/"];
+            function toRandomPost() {
+                const randomPost = posts[Math.floor(Math.random() * posts.length)];
+                pjax.loadUrl(GLOBAL_CONFIG.root + randomPost);
+            }
+        </script>
