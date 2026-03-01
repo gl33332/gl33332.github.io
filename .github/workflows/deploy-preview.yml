@@ -2,7 +2,7 @@ name: Deploy Preview
 
 on:
   push:
-    branches: [preview]
+    branches: [master]
   workflow_dispatch:
 
 jobs:
@@ -42,6 +42,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages
+          publish_branch: preview
           force_orphan: true
           commit_message: "preview: ${{ github.sha }}"
