@@ -2,7 +2,6 @@
 title: Ai历史快照
 date: 2026-03-01 02:45:00
 slug: ai-history-snapshot
-password: __WORK_PASS__
 abstract: 📸 AI三脑协作与系统处置快照记录
 message: ⚠️ 内部机密，请输入授权密码访问。
 tags:
