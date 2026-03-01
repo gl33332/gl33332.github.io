@@ -12,7 +12,7 @@ permalink: "/work/index.html"
     <style>
         body { font-family: -apple-system, system-ui, sans-serif; padding: 40px; background: #f0f2f5; color: #1c1e21; }
         .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-        h1 { border-bottom: 3px solid #007bff; padding-bottom: 15px; display: flex; align-items: center; }
+        h1 { border-bottom: 3px solid #007bff; padding-bottom: 15px; margin-top:0; }
         .section-title { background: #e7f3ff; padding: 8px 15px; border-left: 4px solid #007bff; margin: 25px 0 15px; font-weight: bold; }
         ul { list-style: none; padding: 0; }
         li { padding: 12px; border-bottom: 1px solid #ebedf0; display: flex; justify-content: space-between; align-items: center; }
@@ -27,26 +27,22 @@ permalink: "/work/index.html"
 <body>
     <div class="container">
         <h1>🔒 商战档案中枢 (Full Access)</h1>
-
-        <div class="section-title">📊 核心决策复盘 (Markdown)</div>
+        <div class="section-title">📊 核心决策复盘</div>
         <ul>
             <li><a href="/work/pan.html">📈 2026-02-28-潘总项目意向书复盘</a> <span class="tag tag-md">DOC</span></li>
             <li><a href="/work/shikuang.html">💎 2026-02-28-石矿项目决策复盘</a> <span class="tag tag-md">CORE</span></li>
             <li><a href="/work/legacy-shikuang.html">📜 Legacy-shikuang-redirect</a> <span class="tag tag-md">ARCHIVE</span></li>
         </ul>
-
-        <div class="section-title">🤖 AI 交互快照</div>
+        <div class="section-title">🧠 AI 交互快照</div>
         <ul>
             <li><a href="/work/ai-snapshot-20260301.html">🧠 ai-history-snapshot-20260301</a> <span class="tag tag-md">HISTORY</span></li>
             <li><a href="/work/ai-snapshot.html">🧠 ai-history-snapshot</a> <span class="tag tag-md">BASE</span></li>
         </ul>
-
-        <div class="section-title">🐍 工具与脚本 (Python/Colab)</div>
+        <div class="section-title">🛠️ 工具与脚本</div>
         <ul>
-            <li><a href="/work/colab-v2-corrected.py">🛠️ colab-script-v2-corrected.py</a> <span class="tag tag-py">SCRIPT</span></li>
-            <li><a href="/work/colab-v2-2-final.py">🛠️ colab-script-v2.2-final.py</a> <span class="tag tag-py">STABLE</span></li>
-            <li><a href="/work/colab-v2-2-1-final.py">🚀 colab-script-v2.2.1-final.py</a> <span class="tag tag-py">LATEST</span></li>
-            <li><a href="/work/colab-v2-2-1-ultimate.py">🔥 colab-script-v2.2.1-ultimate.py</a> <span class="tag tag-py">ULTIMATE</span></li>
+            <li><a href="/work/colab-script-v2-corrected.py">🐍 colab-v2-corrected.py</a> <span class="tag tag-py">SCRIPT</span></li>
+            <li><a href="/work/colab-script-v2.2-final.py">🐍 colab-v2.2-final.py</a> <span class="tag tag-py">STABLE</span></li>
+            <li><a href="/work/colab-script-v2.2.1-ultimate.py">🔥 colab-v2.2.1-ultimate.py</a> <span class="tag tag-py">ULTIMATE</span></li>
         </ul>
     </div>
 </body>
