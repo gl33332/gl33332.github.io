@@ -24,7 +24,7 @@ jobs:
           WORK_PASS: ${{ secrets.WORK_PASS }}
         run: |
           test -n "$WORK_PASS"
-          sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/_posts/work-gateway.md
+          sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/work-gateway.md
           [ -f source/tools/index.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/tools/index.md || true
           [ -f source/work/index.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/work/index.md || true
           [ -f source/work/2026-02-28-石矿项目决策复盘.md ] && sed -i "s/__WORK_PASS__/${WORK_PASS}/g" source/work/2026-02-28-石矿项目决策复盘.md || true
