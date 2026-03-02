@@ -735,9 +735,11 @@ css_prefix: true
 extends:
   head:
     - <link rel="stylesheet" href="/schedule/schedule.css">
+    - <link rel="stylesheet" href="/css/custom.css">
   body:
     - <script src="https://cdn.jsdelivr.net/npm/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>
     - <script src="/schedule/schedule.js"></script>
+    - "<script>function bindHbeEnterAndButton(){ const box = document.getElementById('hexo-blog-encrypt'); const input = document.getElementById('hbePass'); if(!box || !input) return; if(input.dataset.hbeBound==='1') return; input.dataset.hbeBound='1'; const triggerDecrypt = ()=>{ const event = new KeyboardEvent('keydown',{ key:'Enter', code:'Enter', keyCode:13, which:13, bubbles:true, cancelable:true }); box.dispatchEvent(event); }; input.addEventListener('keydown', (e)=>{ if ((e.key==='Enter' || e.keyCode===13 || e.which===13) && !e.isComposing){ e.preventDefault(); triggerDecrypt(); } }); if(!box.querySelector('.hbe-manual-submit')){ const actions = document.createElement('div'); actions.className = 'hbe-actions'; const button = document.createElement('button'); button.type = 'button'; button.className = 'hbe-button hbe-manual-submit'; button.textContent = '解锁'; button.addEventListener('click', triggerDecrypt); actions.appendChild(button); box.appendChild(actions); } } document.addEventListener('DOMContentLoaded', bindHbeEnterAndButton); document.addEventListener('pjax:complete', bindHbeEnterAndButton);</script>"
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -904,6 +906,7 @@ inject:
     - <link rel="stylesheet" href="/css/custom.css">
   body:
     - "<script>function injectEssayText(){ const bbtalk = document.getElementById('bbtalk'); if (bbtalk && !document.getElementById('essay-mini-text')) { const span = document.createElement('span'); span.id = 'essay-mini-text'; span.innerText = '即刻说说'; bbtalk.insertBefore(span, bbtalk.firstChild); } } document.addEventListener('DOMContentLoaded', injectEssayText); document.addEventListener('pjax:complete', injectEssayText);</script>"
+    - "<script>function bindHbeEnterAndButton(){ const box = document.getElementById('hexo-blog-encrypt'); const input = document.getElementById('hbePass'); if(!box || !input) return; if(input.dataset.hbeBound==='1') return; input.dataset.hbeBound='1'; const triggerDecrypt = ()=>{ const event = new KeyboardEvent('keydown',{ key:'Enter', code:'Enter', keyCode:13, which:13, bubbles:true, cancelable:true }); box.dispatchEvent(event); }; input.addEventListener('keydown', (e)=>{ if ((e.key==='Enter' || e.keyCode===13 || e.which===13) && !e.isComposing){ e.preventDefault(); triggerDecrypt(); } }); if(!box.querySelector('.hbe-manual-submit')){ const actions = document.createElement('div'); actions.className = 'hbe-actions'; const button = document.createElement('button'); button.type = 'button'; button.className = 'hbe-button hbe-manual-submit'; button.textContent = '解锁'; button.addEventListener('click', triggerDecrypt); actions.appendChild(button); box.appendChild(actions); } } document.addEventListener('DOMContentLoaded', bindHbeEnterAndButton); document.addEventListener('pjax:complete', bindHbeEnterAndButton);</script>"
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------

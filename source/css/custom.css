@@ -81,6 +81,20 @@ a.site-page.child[href="/work/"] span {
   background: linear-gradient(135deg, var(--tb-champagne-gold-300), var(--tb-champagne-gold-500));
 }
 
+#hexo-blog-encrypt .hbe-actions,
+.hbe-container .hbe-actions,
+.decrypt-post .hbe-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#hexo-blog-encrypt .hbe-manual-submit,
+.hbe-container .hbe-manual-submit,
+.decrypt-post .hbe-manual-submit {
+  min-width: 72px;
+}
+
 @media (max-width: 768px) {
   #hexo-blog-encrypt,
   .hbe-container,
