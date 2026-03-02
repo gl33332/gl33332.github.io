@@ -25,50 +25,74 @@ a.site-page.child[href="/work/"] span {
   font-weight: 700;
 }
 
-/* 加密输入框风格（hexo-blog-encrypt 默认类兼容） */
+/* 加密登录卡片（hexo-blog-encrypt 默认类兼容，紧凑版） */
 #hexo-blog-encrypt,
 .hbe-container,
 .decrypt-post {
+  width: min(92vw, 420px);
+  margin: 20px auto;
+  padding: 18px;
   border: 1px solid rgba(199, 168, 111, 0.35);
-  background: linear-gradient(145deg, rgba(11, 31, 58, 0.96), rgba(22, 58, 99, 0.92));
-  border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(228, 207, 161, 0.22), transparent 46%),
+    linear-gradient(160deg, rgba(11, 31, 58, 0.96), rgba(22, 58, 99, 0.93));
+  box-shadow: 0 12px 30px rgba(8, 18, 32, 0.28);
+}
+
+#hexo-blog-encrypt .hbe-input,
+.hbe-container .hbe-input,
+.decrypt-post .hbe-input {
+  margin: 0;
+}
+
+#hexo-blog-encrypt .hbe-input-label-content,
+.hbe-container .hbe-input-label-content,
+.decrypt-post .hbe-input-label-content {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  color: #f2f5fa;
 }
 
 #hexo-blog-encrypt input,
 .hbe-container input,
 .decrypt-post input {
-  border: 1px solid rgba(138, 148, 159, 0.45);
-  background: rgba(255, 255, 255, 0.07);
+  height: 40px;
+  border: 1px solid rgba(138, 148, 159, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
   color: #f5f7fa;
+  padding: 0 12px;
 }
 
 #hexo-blog-encrypt button,
 .hbe-container button,
-.decrypt-post button {
+.decrypt-post button,
+#hexo-blog-encrypt .hbe-button,
+.hbe-container .hbe-button,
+.decrypt-post .hbe-button {
   border: 0;
-  color: #101317;
+  min-height: 36px;
+  border-radius: 10px;
+  color: #0d1521;
   font-weight: 700;
+  padding: 0 14px;
   background: linear-gradient(135deg, var(--tb-champagne-gold-300), var(--tb-champagne-gold-500));
 }
 
-/* 移动端键盘遮挡规避 */
 @media (max-width: 768px) {
   #hexo-blog-encrypt,
   .hbe-container,
   .decrypt-post {
-    min-height: calc(100vh - 120px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    box-sizing: border-box;
+    width: min(94vw, 420px);
+    margin: 14px auto;
+    padding: 14px;
   }
 
   #hexo-blog-encrypt input,
   .hbe-container input,
   .decrypt-post input {
-    font-size: 16px; /* 避免 iOS 自动放大 */
-    max-width: 92vw;
+    font-size: 16px;
   }
 }
