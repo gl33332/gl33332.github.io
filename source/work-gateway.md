@@ -3,6 +3,7 @@ title: "工作台(Private)"
 date: 2026-03-01 21:00:00
 layout: false
 permalink: "/work/index.html"
+password: "__WORK_PASS__"
 ---
 <!DOCTYPE html>
 <html>

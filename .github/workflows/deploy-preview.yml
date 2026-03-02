@@ -21,6 +21,33 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Inject WORK_PASS (runtime only)
+        env:
+          WORK_PASS: ${{ secrets.WORK_PASS }}
+        run: |
+          test -n "$WORK_PASS"
+          python - <<'PY'
+          import os
+          from pathlib import Path
+
+          placeholder = "__WORK_PASS__"
+          replacement = os.environ["WORK_PASS"]
+          count = 0
+
+          for path in Path("source").rglob("*"):
+              if not path.is_file():
+                  continue
+              if path.suffix.lower() not in {".md", ".html", ".yml", ".yaml", ".json", ".js", ".txt"}:
+                  continue
+              text = path.read_text(encoding="utf-8")
+              if placeholder not in text:
+                  continue
+              path.write_text(text.replace(placeholder, replacement), encoding="utf-8")
+              count += 1
+
+          print(f"Injected WORK_PASS into {count} file(s).")
+          PY
+
       - name: Build
         run: |
           npx hexo clean

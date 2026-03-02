@@ -131,7 +131,7 @@ bangumi:
   extraOrder: 1           # 关键：extra_bangumis.json 里的条目排在最前（保证第一页先看到）
 
 # hexo-blog-encrypt
-# encrypt:
-  abstract: false
+encrypt:
+  abstract: ""
   message: ⚠️ 商业机密内容，请输入授权密码访问。
   theme: default

@@ -23,12 +23,28 @@ jobs:
         env:
           WORK_PASS: ${{ secrets.WORK_PASS }}
         run: |
-          # test -n "$WORK_PASS" # disabled
-          # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/work-gateway.md
-          [ -f source/tools/index.md ] && # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/tools/index.md || true
-          [ -f source/work/index.md ] && # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/work/index.md || true
-          [ -f source/work/2026-02-28-石矿项目决策复盘.md ] && # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/work/2026-02-28-石矿项目决策复盘.md || true
-          [ -f source/work/2026-02-28-潘总项目意向书复盘.md ] && # sed -i "s/__WORK_PASS__/${WORK_PASS}/g" # disabled source/work/2026-02-28-潘总项目意向书复盘.md || true
+          test -n "$WORK_PASS"
+          python - <<'PY'
+          import os
+          from pathlib import Path
+
+          placeholder = "__WORK_PASS__"
+          replacement = os.environ["WORK_PASS"]
+          count = 0
+
+          for path in Path("source").rglob("*"):
+              if not path.is_file():
+                  continue
+              if path.suffix.lower() not in {".md", ".html", ".yml", ".yaml", ".json", ".js", ".txt"}:
+                  continue
+              text = path.read_text(encoding="utf-8")
+              if placeholder not in text:
+                  continue
+              path.write_text(text.replace(placeholder, replacement), encoding="utf-8")
+              count += 1
+
+          print(f"Injected WORK_PASS into {count} file(s).")
+          PY
 
       - name: Build
         run: |
