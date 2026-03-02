@@ -1,0 +1,112 @@
+:root {
+  /* C脑配色方案：深蓝 + 钛金灰 + 香槟金 */
+  --tb-deep-blue-900: #0b1f3a;
+  --tb-deep-blue-700: #163a63;
+  --tb-deep-blue-500: #2a5f9e;
+  --tb-titanium-gray-700: #5e6670;
+  --tb-titanium-gray-500: #8a949f;
+  --tb-champagne-gold-500: #c7a86f;
+  --tb-champagne-gold-300: #e4cfa1;
+
+  /* 比例建议：深蓝 70% / 钛金灰 20% / 香槟金 10% */
+  --tb-primary: var(--tb-deep-blue-900);
+  --tb-secondary: var(--tb-titanium-gray-700);
+  --tb-accent: var(--tb-champagne-gold-500);
+}
+
+/* 私密区视觉增强 */
+.page:has(#page-name-text:where(:not(:empty))) #page-name-text {
+  letter-spacing: 0.04em;
+}
+
+/* 导航中 Private 入口强调 */
+a.site-page.child[href="/work/"] span {
+  color: var(--tb-accent);
+  font-weight: 700;
+}
+
+/* 加密登录卡片（hexo-blog-encrypt 默认类兼容，紧凑版） */
+#hexo-blog-encrypt,
+.hbe-container,
+.decrypt-post {
+  width: min(92vw, 420px);
+  margin: 20px auto;
+  padding: 18px;
+  border: 1px solid rgba(199, 168, 111, 0.35);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at top right, rgba(228, 207, 161, 0.22), transparent 46%),
+    linear-gradient(160deg, rgba(11, 31, 58, 0.96), rgba(22, 58, 99, 0.93));
+  box-shadow: 0 12px 30px rgba(8, 18, 32, 0.28);
+}
+
+#hexo-blog-encrypt .hbe-input,
+.hbe-container .hbe-input,
+.decrypt-post .hbe-input {
+  margin: 0;
+}
+
+#hexo-blog-encrypt .hbe-input-label-content,
+.hbe-container .hbe-input-label-content,
+.decrypt-post .hbe-input-label-content {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  color: #f2f5fa;
+}
+
+#hexo-blog-encrypt input,
+.hbe-container input,
+.decrypt-post input {
+  height: 40px;
+  border: 1px solid rgba(138, 148, 159, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f7fa;
+  padding: 0 12px;
+}
+
+#hexo-blog-encrypt button,
+.hbe-container button,
+.decrypt-post button,
+#hexo-blog-encrypt .hbe-button,
+.hbe-container .hbe-button,
+.decrypt-post .hbe-button {
+  border: 0;
+  min-height: 36px;
+  border-radius: 10px;
+  color: #0d1521;
+  font-weight: 700;
+  padding: 0 14px;
+  background: linear-gradient(135deg, var(--tb-champagne-gold-300), var(--tb-champagne-gold-500));
+}
+
+#hexo-blog-encrypt .hbe-actions,
+.hbe-container .hbe-actions,
+.decrypt-post .hbe-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#hexo-blog-encrypt .hbe-manual-submit,
+.hbe-container .hbe-manual-submit,
+.decrypt-post .hbe-manual-submit {
+  min-width: 72px;
+}
+
+@media (max-width: 768px) {
+  #hexo-blog-encrypt,
+  .hbe-container,
+  .decrypt-post {
+    width: min(94vw, 420px);
+    margin: 14px auto;
+    padding: 14px;
+  }
+
+  #hexo-blog-encrypt input,
+  .hbe-container input,
+  .decrypt-post input {
+    font-size: 16px;
+  }
+}
