@@ -14,7 +14,7 @@ keywords:
   - 生活
 author: 同行陌路两不疑
 language: zh-CN
-timezone: ''
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -48,7 +48,7 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-future: true
+future: false
 syntax_highlighter: highlight.js
 highlight:
   line_number: true
@@ -105,11 +105,8 @@ ignore:
 theme: solitude
 
 # Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: git@github.com:gl33332/gl33332.github.io.git
-  branch: preview
+## Managed by GitHub Actions workflows (deploy-preview / deploy-prod)
+deploy: {}
 
 # Search
 search:

@@ -897,7 +897,7 @@ brevity:
   music: false
   page: /essay/
   style: 1
-  strip: 30
+  strip: 12
 # 自定义注入
 inject:
   head:
