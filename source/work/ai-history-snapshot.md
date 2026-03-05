@@ -125,8 +125,8 @@ npx --no-install hexo s -i 0.0.0.0 -p 4000
 
 ### 安全审计（上线前）
 ```bash
-git grep -n "" || true
-git grep -n "d" || true
+git grep -n "__WORK_PASS__" source || true
+git grep -n "WORK_PASS" .github/workflows || true
 git grep -n "password:" source || true
 ```
 
