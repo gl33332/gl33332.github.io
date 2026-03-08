@@ -1,27 +1,24 @@
 ---
-title: "工作台(Private)"
+title: "工作台(内部入口)"
 date: 2026-03-01 21:00:00
 permalink: "/work/index.html"
-password: "__WORK_PASS__"
-abstract: "🔒 商战档案与复盘中枢（受密码保护）"
-message: "⚠️ 商业机密内容，请输入授权密码访问。"
 ---
 
-> 内部资料库：仅保留可复盘、可执行、可交付的关键资产。
+> 本页仅提供内部资料入口。**私密正文不在本站托管**，请使用飞书文档授权访问。
 
-## 核心决策复盘
+## 核心决策复盘（飞书文档）
 
-- [2026-02-28-潘总项目意向书复盘](/work/pan.html)
-- [2026-02-28-石矿项目决策复盘](/work/shikuang.html)
-- [Legacy-shikuang-redirect](/work/legacy-shikuang.html)
+- [石矿项目决策复盘（2026-02-28）](https://ccnxyioeel2r.feishu.cn/wiki/OQpywb7oUihtfakSw8Ccrdw0nHd?from=from_copylink)
+- [潘总项目意向书复盘（2026-02-28）](https://ccnxyioeel2r.feishu.cn/wiki/FqMwwHR82ioInEkwmobcLhfonvg)
 
-## AI 交互快照
+## AI 交互快照（飞书文档）
 
-- [ai-history-snapshot-20260301](/work/ai-snapshot-20260301.html)
-- [ai-history-snapshot](/work/ai-snapshot.html)
+- [三脑协作与发布事故快照（2026-03-01）](https://ccnxyioeel2r.feishu.cn/wiki/LWmgwkXRTijY8xk8Zwxc1cWanPI?from=from_copylink)
 
-## 工具与脚本
+## 工具与脚本（飞书文档）
 
-- [colab-script-v2-corrected.py](/work/colab-script-v2-corrected.py)
-- [colab-script-v2.2-final.py](/work/colab-script-v2.2-final.py)
-- [colab-script-v2.2.1-ultimate.py](/work/colab-script-v2.2.1-ultimate.py)
+- [工具箱索引](https://ccnxyioeel2r.feishu.cn/wiki/GcDLwMEPOivEfrk7C0ycWHdRnkf)
+
+---
+
+如需授权，请联系管理员。
