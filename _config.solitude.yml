@@ -47,8 +47,8 @@ nav:
       追番: /bangumis/ || fas fa-tv 
       留言板: /message/ || fas fa-comments 
       关于: /about/ || fas fa-user
-      🔒 工作台(Private): /work/ || fas fa-user-secret
-      我的轻量级工具箱: /tools/ || fas fa-toolbox
+      🔒 工作台（内部入口）: /work/ || fas fa-user-secret
+      工具箱（内部入口）: /tools/ || fas fa-toolbox
   # Right button
   # 右侧按钮
 right:
